@@ -24,6 +24,22 @@
   --gray-7: #f0f2f5;
   --gray-8: #f5f6fa;
   --gray-9: #fafafa;
+  --font-large: 18px;
+  --font-medium: 16px;
+  --font-small: 14px;
+  --font-weight-semi-bold: 600;
+  --padding-small: 4px;
+  --padding-medium: 8px;
+  --padding-large: 16px;
+  --padding-extra-large: 32px;
+  --margin-small: 4px;
+  --margin-medium: 8px;
+  --margin-large: 16px;
+  --margin-extra-large: 32px;
+  --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 16px;
+  --border-radius-extra-large: 32px;
 }
 
 html,
@@ -41,6 +57,11 @@ body,
 }
 .ant-pro-sider.ant-layout-sider.ant-pro-sider-fixed {
   left: unset;
+}
+
+.ant-btn {
+  padding: var(--padding-small) var(--padding-large);
+  border-radius: var(--border-radius-small);
 }
 
 canvas {

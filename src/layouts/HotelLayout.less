@@ -1,0 +1,43 @@
+.hotelLayout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: @white;
+  .content {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .hotelLayout {
+    .content {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .hotelLayout {
+    .content {
+      width: 85%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hotelLayout {
+    .content {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hotelLayout {
+    .content {
+      width: 95%;
+    }
+  }
+}
