@@ -1,8 +1,15 @@
 export default [
   {
-    path: '/search',
+    path: '/room-booking',
     layout: false,
-    component: './search',
+    component: '../layouts/HotelLayout',
+    routes: [
+      {
+        path: 'search',
+        layout: false,
+        component: './search',
+      },
+    ],
   },
   {
     path: '/landingpage',
