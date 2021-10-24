@@ -4,6 +4,7 @@ import RightContent from '@/components/RightContent';
 import Footer from '@/components/Footer';
 import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
 import { BookOutlined, LinkOutlined } from '@ant-design/icons';
+import LandingPage from './pages/landingpage';
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 /** 获取用户信息比较慢的时候会展示一个 loading */
@@ -59,11 +60,14 @@ export const layout = ({ initialState }) => {
     },
     links: isDev
       ? [
-          <Link to="/umi/plugin/openapi" target="_blank">
+          <Link key="1" to="/umi/plugin/openapi" target="_blank">
             <LinkOutlined />
             <span>OpenAPI 文档</span>
           </Link>,
-          <Link to="/~docs">
+          <Link key="2" to="/landingpage">
+            <span>LandingPage</span>
+          </Link>,
+          <Link key="3" to="/~docs">
             <BookOutlined />
             <span>业务组件文档</span>
           </Link>,

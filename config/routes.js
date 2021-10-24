@@ -5,6 +5,11 @@ export default [
     component: './search',
   },
   {
+    path: '/landingpage',
+    layout: false,
+    component: './landingpage',
+  },
+  {
     path: '/user',
     layout: false,
     routes: [
