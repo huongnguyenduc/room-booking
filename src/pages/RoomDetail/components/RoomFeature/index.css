@@ -1,0 +1,14 @@
+.room__feature {
+	display: flex;
+}
+
+.feature__title{
+	font-size: 14px;
+	font-weight: 700;
+}
+.feature__desc{
+	font-size: 12px;
+	font-weight: 300;
+	color: #999;
+
+}
