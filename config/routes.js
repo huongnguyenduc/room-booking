@@ -9,8 +9,18 @@ export default [
         layout: false,
         component: './search',
       },
+      {
+        path: 'room-detail',
+        layout: false,
+        component: './RoomDetail',
+      },
     ],
   },
+  // {
+  // 	path: '/room-detail',
+  // 	layout: false,
+  // 	component: './RoomDetail',
+  // },
 
   {
     path: '/user',
