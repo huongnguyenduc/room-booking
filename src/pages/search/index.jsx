@@ -215,8 +215,6 @@ function SearchPage() {
           </div>
         </Col>
         <Col lg={8} md={8} sm={8} xs={24}>
-          <Row></Row>
-
           <div className={styles.categoryCard} style={{ backgroundImage: `url(${Background5})` }}>
             <div className={styles.categoryCardTitle}>Outdoor gateways</div>
             <div className={styles.categoryCardStayCount}>131 stays</div>

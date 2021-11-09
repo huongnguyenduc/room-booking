@@ -14,5 +14,136 @@
     background-size: cover;
     border: var(--gray-7) solid 2px;
     border-radius: var(--border-radius-large);
+
+    .btnShowPhotos {
+      position: absolute;
+      right: 20px;
+      height: 30px;
+      margin: auto 5px;
+      font-weight: var(--font-weight-semi-bold);
+      font-size: small;
+      background-color: white;
+      border-radius: var(--border-radius-medium);
+    }
   }
+
+  .title {
+    font-weight: bold;
+    font-size: var(--font-medium);
+  }
+  .description {
+    font-weight: var(--font-weight-semi-bold);
+  }
+  .roomDescription {
+    color: var(--gray-4);
+    font-weight: var(--font-weight-semi-bold);
+  }
+  .price {
+    margin-top: var(--margin-medium);
+    font-weight: bold;
+  }
+
+  .placeRecommend {
+    height: 60px;
+    font-weight: bold;
+    font-size: var(--font-large);
+    line-height: 60px;
+    text-align: center;
+  }
+  .orderBox {
+    height: 240px;
+    padding: 20px 30px 30px 30px;
+    background-color: #ffff;
+    border-radius: var(--border-radius-large);
+    box-shadow: 2px 5px 20px 10px #f5f4f6;
+
+    .roomRate {
+      color: #999;
+      font-weight: 400;
+      font-size: var(--font-medium);
+
+      .roomPrice {
+        font-weight: bold;
+      }
+
+      .ratePoint {
+        color: black;
+        font-weight: 900;
+        font-size: small;
+      }
+      .reviewNumber {
+        color: #918d8d;
+        font-weight: 500;
+        font-size: small;
+      }
+
+      .btnOrder {
+        max-width: 100%;
+        font-weight: 200;
+        font-size: small;
+        background-color: #ff5112;
+        border-radius: var(--border-radius-small);
+      }
+    }
+    .selectBox {
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid lightgray;
+      border-radius: var(--border-radius-medium);
+    }
+    .selectTitle {
+      position: relative;
+      z-index: 1;
+      margin: var(--margin-medium) 0 -4px 10px;
+      font-weight: var(--font-weight-semi-bold);
+      font-size: 12px;
+    }
+  }
+}
+
+.datePicker {
+  display: flex;
+
+  .checkIn {
+    position: relative;
+    display: inline-flex;
+  }
+}
+
+.room {
+  .name {
+    padding-left: var(--padding-medium);
+    font-weight: 900;
+    font-size: 20px;
+  }
+
+  .desc {
+    display: flex;
+
+    .rate {
+      color: #999;
+      font-size: small;
+    }
+
+    .ratePoint {
+      color: black;
+      font-weight: bold;
+      font-size: small;
+    }
+
+    .location {
+      margin-left: var(--margin-large);
+    }
+
+    .numberReview {
+      color: #918d8d;
+      font-weight: var(--font-weight-semi-bold);
+      font-size: small;
+    }
+  }
+}
+
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next {
+  background: red !important;
 }

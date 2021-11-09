@@ -1,0 +1,38 @@
+.roomCard {
+  width: 100%;
+  margin-bottom: var(--margin-large);
+  padding: var(--padding-large);
+  border: var(--gray-7) solid 2px;
+  border-radius: var(--border-radius-large);
+  .roomCardImage {
+    display: flex;
+    justify-content: flex-end;
+    height: 200px;
+    margin-bottom: var(--margin-medium);
+    background-size: cover;
+    border-radius: var(--border-radius-medium);
+    .roomRating {
+      position: absolute;
+      margin: var(--margin-medium) var(--margin-medium) 0 0;
+      padding: var(--padding-small) var(--padding-medium);
+      font-weight: bold;
+      background-color: @white;
+      border-radius: var(--border-radius-small);
+    }
+  }
+}
+.title {
+  font-weight: bold;
+  font-size: var(--font-medium);
+}
+.description {
+  font-weight: var(--font-weight-semi-bold);
+}
+.roomDescription {
+  color: var(--gray-4);
+  font-weight: var(--font-weight-semi-bold);
+}
+.price {
+  margin-top: var(--margin-medium);
+  font-weight: bold;
+}
