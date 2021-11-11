@@ -1,0 +1,195 @@
+.hotelFooter {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: var(--padding-extra-large);
+  .hotelTopFooter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--padding-large) 0;
+    border-top: var(--gray-7) 2px solid;
+    .app {
+      display: flex;
+      flex-direction: row;
+      .appIcon {
+        margin-right: var(--margin-large);
+        font-size: var(--font-extra-large);
+        cursor: pointer;
+      }
+      .smallAppDescription {
+        color: var(--gray-3);
+        font-weight: var(--font-weight-semi-bold);
+        font-size: var(--font-extra-small);
+      }
+      .appTitle {
+        font-weight: bold;
+        font-size: var(--font-medium);
+      }
+      .appItem {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+      }
+      .apple {
+        margin-right: var(--margin-large);
+        padding-right: var(--padding-large);
+        border-right: var(--gray-7) 2px solid;
+      }
+    }
+    .logo {
+      font-size: 32px;
+      cursor: pointer;
+    }
+    .brand {
+      font-weight: bold;
+      font-size: 32px;
+      cursor: pointer;
+    }
+    .hostButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 22px var(--margin-extra-large);
+      color: @white;
+      font-weight: var(--font-weight-semi-bold);
+      background-color: var(--gray-1);
+      border: none;
+      border-radius: var(--border-radius-medium);
+    }
+  }
+  .hotelMiddleFooterSmall {
+    display: none;
+  }
+  .hotelMiddleFooter {
+    width: 100%;
+    padding: var(--padding-large) 0;
+    border-top: var(--gray-7) 2px solid;
+    .category {
+      font-weight: bold;
+    }
+    .categoryItem {
+      margin-top: var(--margin-medium);
+      color: var(--gray-3);
+      font-weight: var(--font-weight-semi-bold);
+      cursor: pointer;
+      &:hover {
+        color: var(--gray-1);
+      }
+    }
+  }
+  .hotelBottomFooter {
+    width: 100%;
+    padding: var(--padding-extra-large) 0;
+    color: var(--gray-2);
+    font-weight: var(--font-weight-semi-bold);
+    border-top: var(--gray-7) 2px solid;
+    .copyrightIcon {
+      font-size: var(--font-extra-small);
+    }
+    .socialAppIcon {
+      margin-left: var(--margin-medium);
+      font-size: var(--font-extra-large);
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .hotelLayout {
+    .content {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .hotelFooter {
+    .hotelTopFooter {
+      .app {
+        .appIcon {
+          margin-right: var(--margin-medium);
+          font-size: var(--font-large);
+        }
+        .appTitle {
+          font-weight: bold;
+          font-size: var(--font-small);
+        }
+        .apple {
+          margin-right: var(--margin-medium);
+          padding-right: var(--padding-medium);
+          border-right: var(--gray-7) 1.5px solid;
+        }
+      }
+      .logo {
+        font-size: 24px;
+        cursor: pointer;
+      }
+      .brand {
+        font-size: 24px;
+      }
+      .hostButton {
+        padding: 20px 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .hotelFooter {
+    .hotelTopFooter {
+      flex-direction: column;
+      .app {
+        order: 2;
+        padding: var(--padding-large);
+
+        .appIcon {
+          margin-right: var(--margin-large);
+          font-size: var(--font-medium);
+        }
+        .appTitle {
+          font-size: var(--font-small);
+        }
+        .apple {
+          margin-right: 48px;
+          padding-right: 48px;
+          border-right: var(--gray-7) 1px solid;
+        }
+      }
+      .logoBrand {
+        order: 1;
+        padding-bottom: var(--padding-large);
+        border-bottom: var(--gray-7) 2px solid;
+      }
+      .logo {
+        margin-right: var(--margin-medium);
+        font-size: 24px;
+        cursor: pointer;
+      }
+      .brand {
+        font-size: 24px;
+      }
+      .hostButton {
+        order: 3;
+        padding: 20px 110px;
+      }
+    }
+    .hotelMiddleFooter {
+      display: none;
+    }
+    .hotelMiddleFooterSmall {
+      display: flex;
+    }
+    .hotelBottomFooter {
+      .hotelBottomFooterCol {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
