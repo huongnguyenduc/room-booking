@@ -1,0 +1,77 @@
+.search_container {
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 750px;
+  margin-left: -375px;
+  padding-top: 0;
+  background-color: #fff;
+  border-radius: 10px;
+  .search_item {
+    padding: 5px;
+    padding-left: 25px;
+    color: black;
+    border: none;
+    > h4 {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+  }
+  .icon_search {
+    margin: 5px;
+    margin-top: 10px;
+    &:hover {
+      background-color: lightgray;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .search_container {
+    position: absolute;
+    top: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 350px;
+    margin-bottom: 2px;
+    margin-left: -250px;
+    padding-top: 0;
+    background-color: #fff;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    .search_item {
+      width: 450px;
+      padding: 5px;
+      padding-left: 15px;
+      color: black;
+      border: none;
+      > h4 {
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+    }
+    .icon_search {
+      margin: 220px;
+      margin-top: 10px;
+      &:hover {
+        background-color: lightgray;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.ant-select-selector {
+  border: none;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border: none;
+}
+.ant-input-number-input ::selection {
+  color: lightgray;
+}

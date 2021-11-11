@@ -1,7 +1,7 @@
 import React from 'react';
 import { AutoComplete, DatePicker, InputNumber } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-import './searchtool.css';
+import './searchtool.less';
 const options = [
   { value: 'New York City' },
   { value: 'Da Nang City' },
@@ -36,11 +36,8 @@ const Searchtool = () => {
           defaultValue={2}
         />
       </div>
-      <div className="search_item">
-        <SearchOutlined
-          className="icon_search"
-          style={{ fontSize: '40px', padding: '2px', margin: '5px', color: '#858585' }}
-        />
+      <div className="icon_search">
+        <SearchOutlined style={{ fontSize: '40px', padding: '7px', color: '#858585' }} />
       </div>
     </div>
   );
