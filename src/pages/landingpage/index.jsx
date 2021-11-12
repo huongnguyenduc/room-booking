@@ -103,15 +103,13 @@ const LandingPage = () => {
           <div className="contentStyle" id="image4" style={{ background: `url(${slide4})` }} />
         </Carousel>
       </div>
-      <div className="search-container">
-        <Searchtool />
-      </div>
+      <Searchtool />
       <div className="recommend">
-        <Row gutter={{ xl: 40, md: 12, sm: 6, xs: 4 }}>
+        <Row gutter={{ xl: 35, md: 12, sm: 6, xs: 4 }}>
           <Col
-            xs={{ span: 20, offset: 1 }}
-            lg={{ span: 7, offset: 0 }}
-            md={{ span: 11, offset: 6 }}
+            xs={{ span: 20, offset: 2 }}
+            lg={{ span: 8, offset: 0 }}
+            md={{ span: 15, offset: 4 }}
           >
             <div className="placeCard" style={{ background: `url(${place1})` }}>
               <div className="title-content-1">
@@ -121,13 +119,13 @@ const LandingPage = () => {
             </div>
           </Col>
           <Col
-            xs={{ span: 20, offset: 1 }}
-            lg={{ span: 7, offset: 0 }}
-            md={{ span: 11, offset: 6 }}
+            xs={{ span: 20, offset: 2 }}
+            lg={{ span: 8, offset: 0 }}
+            md={{ span: 15, offset: 4 }}
             className="placeCard"
           >
             <Row>
-              <Col span={23}>
+              <Col span={24}>
                 <div
                   className="place"
                   style={{ background: `url(${place2})`, backgroundSize: `cover` }}
@@ -139,9 +137,9 @@ const LandingPage = () => {
                 </div>
               </Col>
             </Row>
-            <div style={{ margin: '50px' }} />
+            <div style={{ marginBottom: '50px' }} />
             <Row>
-              <Col span={23}>
+              <Col span={24}>
                 <div
                   className="place"
                   style={{ background: `url(${place3})`, backgroundSize: `cover` }}
@@ -155,9 +153,9 @@ const LandingPage = () => {
             </Row>
           </Col>
           <Col
-            xs={{ span: 20, offset: 1 }}
-            lg={{ span: 7, offset: 0 }}
-            md={{ span: 11, offset: 6 }}
+            xs={{ span: 20, offset: 2 }}
+            lg={{ span: 8, offset: 0 }}
+            md={{ span: 15, offset: 4 }}
           >
             <div
               className="placeCard"

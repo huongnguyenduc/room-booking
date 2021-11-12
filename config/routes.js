@@ -14,6 +14,11 @@ export default [
         layout: false,
         component: './RoomDetail',
       },
+      {
+        path: 'landing-page',
+        layout: false,
+        component: './LandingPage',
+      },
     ],
   },
   // {
@@ -22,11 +27,6 @@ export default [
   // 	component: './RoomDetail',
   // },
 
-  {
-    path: '/landingpage',
-    layout: false,
-    component: './landingpage',
-  },
   {
     path: '/user',
     layout: false,

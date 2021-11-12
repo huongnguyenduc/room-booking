@@ -13,28 +13,19 @@ const Searchtool = () => {
     <div className="search_container">
       <div className="search_item">
         <h4>Location</h4>
-        <AutoComplete
-          style={{ width: '180px', border: 'none' }}
-          options={options}
-          placeholder="Where are you going?"
-        />
+        <AutoComplete options={options} placeholder="Where are you going?" />
       </div>
       <div className="search_item">
         <h4>Check in</h4>
-        <DatePicker style={{ border: 'none' }} />
+        <DatePicker />
       </div>
       <div className="search_item">
         <h4>Check out</h4>
-        <DatePicker style={{ border: 'none' }} />
+        <DatePicker />
       </div>
       <div className="search_item">
         <h4>Guests</h4>
-        <InputNumber
-          style={{ border: 'none', color: '#26313f' }}
-          min={1}
-          max={10}
-          defaultValue={2}
-        />
+        <InputNumber min={1} max={10} defaultValue={2} />
       </div>
       <div className="icon_search">
         <SearchOutlined style={{ fontSize: '40px', padding: '7px', color: '#858585' }} />
