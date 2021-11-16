@@ -241,7 +241,7 @@ const TableList = () => {
       <ProTable
         headerTitle={intl.formatMessage({
           id: 'pages.searchTable.title',
-          defaultMessage: 'Enquiry form',
+          defaultMessage: 'no form',
         })}
         actionRef={actionRef}
         rowKey="key"
