@@ -18,7 +18,8 @@ const { ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION } = process.env;
  * 如果是 pro 的预览，默认是有权限的
  */
 
-let access = ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION === 'site' ? 'admin' : '';
+// let access = ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION === 'site' ? 'admin' : '';
+const access = 'admin';
 
 const getAccess = () => {
   return access;
@@ -30,10 +31,10 @@ export default {
     if (!getAccess()) {
       res.status(401).send({
         data: {
-          isLogin: false,
+          isLogin: true,
         },
-        errorCode: '401',
-        errorMessage: '请先登录！',
+        // errorCode: '401',
+        // errorMessage: '请先登录！',
         success: true,
       });
       return;

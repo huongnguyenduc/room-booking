@@ -1,7 +1,6 @@
 // https://umijs.org/config/
 import { defineConfig } from 'umi';
 import { join } from 'path';
-import defaultSettings from './defaultSettings';
 import proxy from './proxy';
 import routes from './routes';
 const { REACT_APP_ENV } = process.env;
@@ -13,9 +12,10 @@ export default defineConfig({
   },
   layout: {
     // https://umijs.org/zh-CN/plugins/plugin-layout
-    locale: true,
-    siderWidth: 208,
-    ...defaultSettings,
+    // locale: true,
+    // siderWidth: 208,
+    // ...defaultSettings,
+    title: 'Room Booking',
   },
   // https://umijs.org/zh-CN/plugins/plugin-locale
   locale: {
