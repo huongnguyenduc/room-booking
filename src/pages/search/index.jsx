@@ -1,6 +1,7 @@
 import { Col, Row, Button } from 'antd';
 import { Content } from 'antd/lib/layout/layout';
 import React from 'react';
+import { SearchOutlined } from '@ant-design/icons';
 import styles from './styles.less';
 import Background1 from '@/assets/background_1.jpg';
 import Background2 from '@/assets/background_2.jpg';
@@ -8,10 +9,63 @@ import Background3 from '@/assets/background_3.jpg';
 import Background4 from '@/assets/background_4.jpg';
 import Background5 from '@/assets/background_5.jpg';
 import ProBackground from '@/assets/pro_background.jpg';
+import { GRAY_1 } from '@/constants/color';
 
 function SearchPage() {
   return (
     <Content className={styles.searchPage}>
+      <Row className={styles.location}>
+        <Col span={12}>
+          <div className={styles.locationItem}>
+            <div className={styles.locationItemTitle}>Location</div>
+            <div className={styles.locationItemContent}>
+              Wellington City, Wellington, New Zealand
+            </div>
+          </div>
+        </Col>
+        <Col span={3}>
+          <div className={styles.locationItem}>
+            <div className={styles.locationItemTitle}>Check in</div>
+            <div className={styles.locationItemContent}>Jun 29</div>
+          </div>
+        </Col>
+        <Col span={3}>
+          <div className={styles.locationItem}>
+            <div className={styles.locationItemTitle}>Check out</div>
+            <div className={styles.locationItemContent}>Jul 5</div>
+          </div>
+        </Col>
+        <Col span={3}>
+          <div className={styles.locationItem}>
+            <div className={styles.locationItemTitle}>Guests</div>
+            <div className={styles.locationItemContent}>2 Guests</div>
+          </div>
+        </Col>
+        <Col span={3}>
+          <div className={styles.locationSearch}>
+            <div className={styles.locationSearchIcon}>
+              <SearchOutlined style={{ fontSize: '20px', color: GRAY_1 }} />
+            </div>
+          </div>
+        </Col>
+      </Row>
+      <Row className={styles.info}>
+        <Col span={12}>
+          <div className={styles.infoContent}>
+            <div className={styles.infoRoom}>29 stays · Jun 29 - 30</div>
+            <div className={styles.infoSelectedMap}>Stays in selected map area</div>
+          </div>
+        </Col>
+        <Col span={12}>
+          <div className={styles.infoFilter}>
+            <div className={styles.infoFilterItem}>Cancellation flexibility</div>
+            <div className={styles.infoFilterItem}>Entire place</div>
+            <div className={styles.infoFilterItem}>Price</div>
+            <div className={styles.infoFilterItem}>Instant Book</div>
+            <div className={styles.infoFilterMore}>More filters · 19</div>
+          </div>
+        </Col>
+      </Row>
       <Row gutter={{ xl: 24, md: 12, sm: 6, xs: 4 }}>
         <Col lg={6} md={12} sm={12} xs={12}>
           <div className={styles.roomCard}>

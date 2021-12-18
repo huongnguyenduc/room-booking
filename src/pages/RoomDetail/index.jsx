@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './index.css';
-import { Row, Col } from 'antd';
+import './styles.less';
+import { Row, Col, Modal, Switch } from 'antd';
 import { Card } from 'antd';
 import { Divider } from 'antd';
 import { Avatar } from 'antd';
@@ -18,6 +19,10 @@ import {
   LeftCircleFilled,
   RightCircleOutlined,
   FileImageOutlined,
+  ShareAltOutlined,
+  HeartOutlined,
+  PictureOutlined,
+  AuditOutlined,
 } from '@ant-design/icons';
 import RoomFeature from './components/RoomFeature/index.jsx';
 import { SearchOutlined } from '@ant-design/icons';
@@ -33,6 +38,8 @@ import Background4 from '@/assets/background_4.jpg';
 import Background5 from '@/assets/background_5.jpg';
 import ProBackground from '@/assets/pro_background.jpg';
 import CardItem from './components/CardItem';
+import { GRAY_1 } from '@/constants/color';
+import PaymentModal from './components/PaymentModal';
 
 const RoomDetail = (props) => {
   const { Option } = Select;
@@ -70,19 +77,35 @@ const RoomDetail = (props) => {
     },
   ];
 
+  const [isPaymentModalVisible, setIsPaymentModalVisible] = React.useState(false);
+
+  const showPaymentModal = () => {
+    setIsPaymentModalVisible(true);
+  };
+
+  const handlePaymentOk = () => {
+    setIsPaymentModalVisible(false);
+  };
+
+  const handlePaymentCancel = () => {
+    setIsPaymentModalVisible(false);
+  };
+
   return (
     <Content className={styles.roomDetailPage}>
-      <Row style={{ margin: '10px 0' }}>
+      <Row style={{ margin: '20px 0' }}>
         <Col lg={24} md={24} sm={24} xs={24}>
           <Row align="middle">
             <Col lg={1} md={1} sm={2} xs={2}>
-              <Button shape="circle" icon={<StarFilled />} />
+              <div className={styles.iconBack}>
+                <ArrowLeftOutlined style={{ fontSize: '16px', color: GRAY_1 }} />
+              </div>
             </Col>
 
-            <Col span={21}>
+            <Col span={19}>
               <div className={styles.room}>
                 <div className={styles.name}>Tiny house hosted by George</div>
-                <Col span={20} offset={1}>
+                <Col span={20}>
                   <div className={styles.desc}>
                     <div className={styles.rate}>
                       <StarFilled style={{ color: 'orangered' }} />
@@ -97,6 +120,18 @@ const RoomDetail = (props) => {
                 </Col>
               </div>
             </Col>
+            <Col lg={4} md={4} sm={3} xs={3}>
+              <div className={styles.action}>
+                <div className={styles.actionItem}>
+                  <ShareAltOutlined style={{ fontSize: '26px', color: GRAY_1 }} />
+                  <span className={styles.actionName}>Share</span>
+                </div>
+                <div className={styles.actionItem}>
+                  <HeartOutlined style={{ fontSize: '26px', color: GRAY_1 }} />
+                  <span className={styles.actionName}>Heart</span>
+                </div>
+              </div>
+            </Col>
           </Row>
         </Col>
       </Row>
@@ -108,41 +143,44 @@ const RoomDetail = (props) => {
           <Row>
             <div
               className={styles.viewHotel}
-              style={{ backgroundImage: `url(${Background5})`, height: '200px' }}
+              style={{ backgroundImage: `url(${Background5})`, height: '282px' }}
             />
           </Row>
           <Row>
             <div
               className={styles.viewHotel}
-              style={{ backgroundImage: `url(${Background5})`, height: '200px' }}
+              style={{ backgroundImage: `url(${Background5})`, height: '282px' }}
             />
           </Row>
         </Col>
         <Col lg={8} md={8} sm={8} xs={24}>
           <div className={styles.viewHotel} style={{ backgroundImage: `url(${Background3})` }}>
             {/* <div className={styles.photos}>Choose another photo</div> */}
-            <Button className={styles.btnShowPhotos} icon={<FileImageOutlined />}>
-              Show all photos
+            <Button
+              className={styles.btnShowPhotos}
+              icon={<PictureOutlined style={{ fontSize: '25px' }} />}
+            >
+              Show all photos +12
             </Button>
           </div>
         </Col>
       </Row>
-      <Row>
+      <Row style={{ marginTop: '20px' }}>
         <Col lg={16} md={16} sm={24} xs={24}>
           <Row>
-            <Col span={21}>
-              <div>
-                <div className="room__title">Tiny house hosted by George</div>
-                <div className="room__info">2 guests - 1 bedroom - 1 bed - 1 bathroom</div>
-              </div>
+            <Col span={19}>
+              <div className="room__title">Tiny house hosted by George</div>
+              <div className="room__info">2 guests · 1 bedroom · 1 bed · 1 bathroom</div>
             </Col>
-            <Col span={1}>
-              <Avatar
-                size={48}
-                src={
-                  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80'
-                }
-              />
+            <Col span={2}>
+              <div className={styles.roomInfo}>
+                <Avatar
+                  size={48}
+                  src={
+                    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80'
+                  }
+                />
+              </div>
             </Col>
           </Row>
 
@@ -161,11 +199,13 @@ const RoomDetail = (props) => {
           <div className={styles.orderBox}>
             <Row>
               <Col span={12}>
-                <span className={styles.price}>$94/ night</span>
+                <span className={styles.price}>
+                  <span className={styles.priceDollar}>$94</span> / night
+                </span>
               </Col>
               <Col span={12}>
                 <div className={styles.roomRate}>
-                  <StarFilled style={{ color: 'orangered' }} />
+                  <StarFilled style={{ color: 'orangered', fontSize: '22px' }} />
                   <span className={styles.ratePoint}> 5.0</span>
                   <span className={styles.reviewNumber}> (175 Reviews)</span>
                 </div>
@@ -176,23 +216,29 @@ const RoomDetail = (props) => {
                 <Row>
                   <Col span={12} style={{ borderRight: '1px solid lightgray' }}>
                     <div className={styles.selectTitle}>Check-in</div>
-                    <DatePicker placeholder="Add date" style={{ width: '100%', border: 'none' }} />
+                    <DatePicker
+                      placeholder="Add date"
+                      style={{ width: '100%', border: 'none', boxShadow: 'none' }}
+                    />
                   </Col>
 
                   <Col span={12}>
                     <div className={styles.selectTitle}>Check-out</div>
-                    <DatePicker placeholder="Add date" style={{ width: '100%', border: 'none' }} />
+                    <DatePicker
+                      placeholder="Add date"
+                      style={{ width: '100%', border: 'none', boxShadow: 'none' }}
+                    />
                   </Col>
                   <Col span={24} style={{ borderTop: '1px solid lightgray' }}>
-                    <div className={styles.selectTitle} style={{ color: 'var(--gray-5)' }}>
-                      Guest
-                    </div>
+                    <div className={styles.selectTitle}>Guest</div>
                     <Select
                       defaultValue="1"
                       style={{
                         width: '100%',
                         borderRadius: '18px',
-                        fontWeight: 'semi-bold',
+                        fontWeight: 'bold',
+                        border: 'none',
+                        boxShadow: 'none',
                       }}
                     >
                       <Option value="1">1 Guest</Option>
@@ -205,11 +251,25 @@ const RoomDetail = (props) => {
             </Row>
             <Row>
               <Col span={24}>
-                <Button type="primary" block className={styles.btnOrder} style={{ height: '40px' }}>
+                <PaymentModal
+                  isPaymentModalVisible={isPaymentModalVisible}
+                  handlePaymentCancel={handlePaymentCancel}
+                  handlePaymentOk={handlePaymentOk}
+                />
+                <Button
+                  type="primary"
+                  block
+                  className={styles.btnOrder}
+                  style={{ fontWeight: 'bold', margin: '2px 2px' }}
+                  onClick={showPaymentModal}
+                >
                   Check availibility
                 </Button>
               </Col>
             </Row>
+          </div>
+          <div className={styles.report}>
+            <AuditOutlined style={{ fontSize: '22px', marginRight: '10px' }} /> Report this listing
           </div>
         </Col>
       </Row>
@@ -223,6 +283,7 @@ const RoomDetail = (props) => {
           nextArrow={<RightOutlined />}
           className="carousel"
         >
+          <CardItem />
           <CardItem />
           <CardItem />
           <CardItem />

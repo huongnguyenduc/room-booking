@@ -1,14 +1,15 @@
 import React from 'react';
 import { AutoComplete, DatePicker, InputNumber } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-import './searchtool.less';
+import './searchTool.less';
+import { GRAY_1 } from '@/constants/color';
 const options = [
   { value: 'New York City' },
   { value: 'Da Nang City' },
   { value: 'Ho Chi Minh City' },
   { value: 'Can Tho City' },
 ];
-const Searchtool = () => {
+const SearchTool = () => {
   return (
     <div className="search_container">
       <div className="search_item">
@@ -23,15 +24,15 @@ const Searchtool = () => {
         <h4>Check out</h4>
         <DatePicker />
       </div>
-      <div className="search_item">
+      <div className="search_item" style={{ border: 'none' }}>
         <h4>Guests</h4>
-        <InputNumber min={1} max={10} defaultValue={2} />
+        <InputNumber min={1} max={10} placeholder="Add guests" />
       </div>
       <div className="icon_search">
-        <SearchOutlined style={{ fontSize: '40px', padding: '7px', color: '#858585' }} />
+        <SearchOutlined style={{ fontSize: '30px', padding: '7px 14px', color: GRAY_1 }} />
       </div>
     </div>
   );
 };
 
-export default Searchtool;
+export default SearchTool;

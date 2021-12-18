@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Carousel, Row, Col, Tabs, Modal, Button, Select, Input, Divider } from 'antd';
-import { LeftOutlined, RightOutlined, FacebookFilled, GoogleOutlined } from '@ant-design/icons';
+// import React from 'react';
+import { Carousel, Row, Col, Tabs } from 'antd';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import './style.less';
-import Searchtool from './searchtool';
+import SearchTool from './searchTool';
 import slide1 from '../../asset/image2.jpg';
 import slide2 from '../../asset/image4.jpg';
 import slide3 from '../../asset/image1.jpg';
@@ -19,76 +19,10 @@ import explore5 from '../../asset/explore5.jpg';
 import explore6 from '../../asset/explore6.jpg';
 import explore7 from '../../asset/explore7.jpg';
 import explore8 from '../../asset/explore8.jpg';
-const { Option } = Select;
 const { TabPane } = Tabs;
 const LandingPage = () => {
-  const [visible, setVisible] = useState(false);
-  const title = (
-    <div className="SignIn_title">
-      <h2 style={{ fontWeight: 'bold' }}>Sign in</h2>
-      <a href="#" style={{ color: 'gray', fontSize: '13px', textDecoration: 'underline' }}>
-        Create an account
-      </a>
-    </div>
-  );
   return (
     <div className="Container">
-      <div className="SignIn">
-        <Button type="primary" onClick={() => setVisible(true)}>
-          Sign In
-        </Button>
-        <Modal
-          title={title}
-          style={{ top: 100, left: 400 }}
-          visible={visible}
-          onCancel={() => setVisible(false)}
-          footer={[]}
-        >
-          <div className="SignInContainer">
-            <Select
-              style={{
-                height: '50px',
-                width: 300,
-                border: '2px solid lightgray',
-                borderRadius: '7px 7px 0px 0px',
-              }}
-              defaultValue="Country/Region"
-            >
-              <Option value="jack">American</Option>
-              <Option value="lucy">England</Option>
-              <Option value="Yiminghe">Australia</Option>
-            </Select>
-            <Input
-              style={{
-                height: '50px',
-                width: 300,
-                border: '2px solid lightgray',
-                borderRadius: '0px 0px 7px 7px',
-              }}
-              placeholder="Phone Number"
-            />
-            <p style={{ fontSize: '11px', color: 'gray', marginTop: '5px' }}>
-              We`&apos;`ll call or text you to confirm your number. Standard message and data rates
-              apply.
-            </p>
-            <Button
-              style={{ height: '50px', width: 300, borderRadius: '7px 7px 7px 7px' }}
-              type="primary"
-            >
-              Sign in
-            </Button>
-            <Divider>OR</Divider>
-            <div className="PlugginButton">
-              <FacebookFilled style={{ fontSize: '20px', marginLeft: '15px' }} />
-              <h3>Continue with Facebook</h3>
-            </div>
-            <div className="PlugginButton">
-              <GoogleOutlined style={{ fontSize: '20px', marginLeft: '15px' }} />
-              <h3>Continue with Google</h3>
-            </div>
-          </div>
-        </Modal>
-      </div>
       <div className="herosection">
         <Carousel
           className="carousel"
@@ -102,10 +36,10 @@ const LandingPage = () => {
           <div className="contentStyle" id="image3" style={{ background: `url(${slide3})` }} />
           <div className="contentStyle" id="image4" style={{ background: `url(${slide4})` }} />
         </Carousel>
+        <SearchTool />
       </div>
-      <Searchtool />
       <div className="recommend">
-        <Row gutter={{ xl: 35, md: 12, sm: 6, xs: 4 }}>
+        <Row gutter={{ xl: 30, md: 12, sm: 6, xs: 4 }}>
           <Col
             xs={{ span: 20, offset: 2 }}
             lg={{ span: 8, offset: 0 }}
@@ -113,7 +47,9 @@ const LandingPage = () => {
           >
             <div className="placeCard" style={{ background: `url(${place1})` }}>
               <div className="title-content-1">
-                <h3 style={{ color: 'white', fontWeight: 'bold' }}>Outdoor gateways</h3>
+                <div className="title-name" style={{ color: 'white', fontWeight: 'bold' }}>
+                  Outdoor gateways
+                </div>
                 <span>131 stays</span>
               </div>
             </div>
@@ -131,13 +67,15 @@ const LandingPage = () => {
                   style={{ background: `url(${place2})`, backgroundSize: `cover` }}
                 >
                   <div className="title-content-2">
-                    <h3 style={{ color: 'white', fontWeight: 'bold' }}>Unique stays</h3>
+                    <div className="title-name" style={{ color: 'white', fontWeight: 'bold' }}>
+                      Unique stays
+                    </div>
                     <span>131 stays</span>
                   </div>
                 </div>
               </Col>
             </Row>
-            <div style={{ marginBottom: '50px' }} />
+            <div style={{ marginBottom: '20px' }} />
             <Row>
               <Col span={24}>
                 <div
@@ -145,7 +83,9 @@ const LandingPage = () => {
                   style={{ background: `url(${place3})`, backgroundSize: `cover` }}
                 >
                   <div className="title-content-2">
-                    <h3 style={{ color: 'white', fontWeight: 'bold' }}>Entire home</h3>
+                    <div className="title-name" style={{ color: 'white', fontWeight: 'bold' }}>
+                      Entire home
+                    </div>
                     <span>131 stays</span>
                   </div>
                 </div>
@@ -162,7 +102,9 @@ const LandingPage = () => {
               style={{ background: `url(${place4})`, backgroundSize: `cover` }}
             >
               <div className="title-content-1">
-                <h3 style={{ color: 'white', fontWeight: 'bold' }}>Pets allowed</h3>
+                <div className="title-name" style={{ color: 'white', fontWeight: 'bold' }}>
+                  Pets allowed
+                </div>
                 <span>131 stays</span>
               </div>
             </div>
@@ -174,7 +116,7 @@ const LandingPage = () => {
           <h2 style={{ fontWeight: 'bold' }}>Explore nearby</h2>
         </div>
         <div className="container_explore">
-          <Row>
+          <Row gutter={[0, 15]}>
             <Col
               lg={{ span: 6, offset: 0 }}
               md={{ span: 10, offset: 0 }}
@@ -187,8 +129,8 @@ const LandingPage = () => {
                   style={{ background: `url(${explore1})`, backgroundSize: `cover` }}
                 />
                 <div className="item_content">
-                  <h4>San Francisco</h4>
-                  <h5>3 Hour drive</h5>
+                  <div className="item_content_city">San Francisco</div>
+                  <div className="item_content_time">3 Hour drive</div>
                 </div>
               </div>
             </Col>
@@ -204,8 +146,8 @@ const LandingPage = () => {
                   style={{ background: `url(${explore2})`, backgroundSize: `cover` }}
                 />
                 <div className="item_content">
-                  <h4>Los Angeles</h4>
-                  <h5>1 Hour drive</h5>
+                  <div className="item_content_city">Los Angeles</div>
+                  <div className="item_content_time">1 Hour drive</div>
                 </div>
               </div>
             </Col>
@@ -221,8 +163,8 @@ const LandingPage = () => {
                   style={{ background: `url(${explore3})`, backgroundSize: `cover` }}
                 />
                 <div className="item_content">
-                  <h4>Rome</h4>
-                  <h5>2 Hour drive</h5>
+                  <div className="item_content_city">Rome</div>
+                  <div className="item_content_time">2 Hour drive</div>
                 </div>
               </div>
             </Col>
@@ -238,13 +180,11 @@ const LandingPage = () => {
                   style={{ background: `url(${explore4})`, backgroundSize: `cover` }}
                 />
                 <div className="item_content">
-                  <h4>Miami</h4>
-                  <h5>5 Hour drive</h5>
+                  <div className="item_content_city">Miami</div>
+                  <div className="item_content_time">5 Hour drive</div>
                 </div>
               </div>
             </Col>
-          </Row>
-          <Row>
             <Col
               lg={{ span: 6, offset: 0 }}
               md={{ span: 10, offset: 0 }}
@@ -257,8 +197,8 @@ const LandingPage = () => {
                   style={{ background: `url(${explore5})`, backgroundSize: `cover` }}
                 />
                 <div className="item_content">
-                  <h4>New York City</h4>
-                  <h5>3 Hour drive</h5>
+                  <div className="item_content_city">New York City</div>
+                  <div className="item_content_time">3 Hour drive</div>
                 </div>
               </div>
             </Col>
@@ -274,8 +214,8 @@ const LandingPage = () => {
                   style={{ background: `url(${explore6})`, backgroundSize: `cover` }}
                 />
                 <div className="item_content">
-                  <h4>Paris</h4>
-                  <h5>1 Hour drive</h5>
+                  <div className="item_content_city">Paris</div>
+                  <div className="item_content_time">1 Hour drive</div>
                 </div>
               </div>
             </Col>
@@ -291,8 +231,8 @@ const LandingPage = () => {
                   style={{ background: `url(${explore7})`, backgroundSize: `cover` }}
                 />
                 <div className="item_content">
-                  <h4>Danang</h4>
-                  <h5>2 Hour drive</h5>
+                  <div className="item_content_city">Danang</div>
+                  <div className="item_content_time">2 Hour drive</div>
                 </div>
               </div>
             </Col>
@@ -308,8 +248,8 @@ const LandingPage = () => {
                   style={{ background: `url(${explore8})`, backgroundSize: `cover` }}
                 />
                 <div className="item_content">
-                  <h4>Singapore</h4>
-                  <h5>5 Hour drive</h5>
+                  <div className="item_content_city">Singapore</div>
+                  <div className="item_content_time">5 Hour drive</div>
                 </div>
               </div>
             </Col>
@@ -320,15 +260,15 @@ const LandingPage = () => {
         <h2 style={{ fontWeight: 'bold' }}>Inspiration for future getaways</h2>
         <Tabs defaultActiveKey="1">
           <TabPane tab="Destinations for art and culture" key="1">
-            <Row>
+            <Row gutter={[0, 10]}>
               <Col
                 lg={{ span: 4, offset: 0 }}
                 md={{ span: 4, offset: 0 }}
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Phoenix</h4>
-                  <h5>Arizona</h5>
+                  <div className="content_location_city">Phoenix</div>
+                  <div className="content_location_country">Arizona</div>
                 </div>
               </Col>
               <Col
@@ -337,8 +277,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>San Francisco</h4>
-                  <h5>California</h5>
+                  <div className="content_location_city">San Francisco</div>
+                  <div className="content_location_country">California</div>
                 </div>
               </Col>
               <Col
@@ -347,8 +287,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Keswick</h4>
-                  <h5>England</h5>
+                  <div className="content_location_city">Keswick</div>
+                  <div className="content_location_country">England</div>
                 </div>
               </Col>
               <Col
@@ -357,8 +297,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>York</h4>
-                  <h5>England</h5>
+                  <div className="content_location_city">York</div>
+                  <div className="content_location_country">England</div>
                 </div>
               </Col>
               <Col
@@ -367,8 +307,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Dublin</h4>
-                  <h5>Ireland</h5>
+                  <div className="content_location_city">Dublin</div>
+                  <div className="content_location_country">Ireland</div>
                 </div>
               </Col>
               <Col
@@ -377,20 +317,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Grande Isle</h4>
-                  <h5>Lousiana</h5>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col
-                lg={{ span: 4, offset: 0 }}
-                md={{ span: 4, offset: 0 }}
-                xs={{ span: 4, offset: 0 }}
-              >
-                <div className="content_location">
-                  <h4>Duluth</h4>
-                  <h5>Minnesota</h5>
+                  <div className="content_location_city">Grande Isle</div>
+                  <div className="content_location_country">Lousiana</div>
                 </div>
               </Col>
               <Col
@@ -399,8 +327,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Hot Springs</h4>
-                  <h5>Arkansas</h5>
+                  <div className="content_location_city">Duluth</div>
+                  <div className="content_location_country">Minnesota</div>
                 </div>
               </Col>
               <Col
@@ -409,8 +337,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Barcelona</h4>
-                  <h5>Catalonia</h5>
+                  <div className="content_location_city">Hot Springs</div>
+                  <div className="content_location_country">Arkansas</div>
                 </div>
               </Col>
               <Col
@@ -419,8 +347,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>London</h4>
-                  <h5>England</h5>
+                  <div className="content_location_city">Barcelona</div>
+                  <div className="content_location_country">Catalonia</div>
                 </div>
               </Col>
               <Col
@@ -429,8 +357,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Paris</h4>
-                  <h5>France</h5>
+                  <div className="content_location_city">London</div>
+                  <div className="content_location_country">England</div>
                 </div>
               </Col>
               <Col
@@ -439,20 +367,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Florece</h4>
-                  <h5>Italy</h5>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col
-                lg={{ span: 4, offset: 0 }}
-                md={{ span: 4, offset: 0 }}
-                xs={{ span: 4, offset: 0 }}
-              >
-                <div className="content_location">
-                  <h4>Berlin</h4>
-                  <h5>Germany</h5>
+                  <div className="content_location_city">Paris</div>
+                  <div className="content_location_country">France</div>
                 </div>
               </Col>
               <Col
@@ -461,8 +377,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Athens</h4>
-                  <h5>Greece</h5>
+                  <div className="content_location_city">Florece</div>
+                  <div className="content_location_country">Italy</div>
                 </div>
               </Col>
               <Col
@@ -471,8 +387,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Istambul</h4>
-                  <h5>Turkey</h5>
+                  <div className="content_location_city">Berlin</div>
+                  <div className="content_location_country">Germany</div>
                 </div>
               </Col>
               <Col
@@ -481,8 +397,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Milan</h4>
-                  <h5>italy</h5>
+                  <div className="content_location_city">Athens</div>
+                  <div className="content_location_country">Greece</div>
                 </div>
               </Col>
               <Col
@@ -491,8 +407,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Rome</h4>
-                  <h5>Italy</h5>
+                  <div className="content_location_city">Istambul</div>
+                  <div className="content_location_country">Turkey</div>
                 </div>
               </Col>
               <Col
@@ -501,22 +417,42 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Marid</h4>
-                  <h5>Spain</h5>
+                  <div className="content_location_city">Milan</div>
+                  <div className="content_location_country">italy</div>
+                </div>
+              </Col>
+              <Col
+                lg={{ span: 4, offset: 0 }}
+                md={{ span: 4, offset: 0 }}
+                xs={{ span: 4, offset: 0 }}
+              >
+                <div className="content_location">
+                  <div className="content_location_city">Rome</div>
+                  <div className="content_location_country">Italy</div>
+                </div>
+              </Col>
+              <Col
+                lg={{ span: 4, offset: 0 }}
+                md={{ span: 4, offset: 0 }}
+                xs={{ span: 4, offset: 0 }}
+              >
+                <div className="content_location">
+                  <div className="content_location_city">Marid</div>
+                  <div className="content_location_country">Spain</div>
                 </div>
               </Col>
             </Row>
           </TabPane>
           <TabPane tab="Destinations for outdoor adventure" key="2">
-            <Row>
+            <Row gutter={[0, 10]}>
               <Col
                 lg={{ span: 4, offset: 0 }}
                 md={{ span: 4, offset: 0 }}
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Duluth</h4>
-                  <h5>Minnesota</h5>
+                  <div className="content_location_city">Duluth</div>
+                  <div className="content_location_country">Minnesota</div>
                 </div>
               </Col>
               <Col
@@ -525,8 +461,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Hot Springs</h4>
-                  <h5>Arkansas</h5>
+                  <div className="content_location_city">Hot Springs</div>
+                  <div className="content_location_country">Arkansas</div>
                 </div>
               </Col>
               <Col
@@ -535,8 +471,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Barcelona</h4>
-                  <h5>Catalonia</h5>
+                  <div className="content_location_city">Barcelona</div>
+                  <div className="content_location_country">Catalonia</div>
                 </div>
               </Col>
               <Col
@@ -545,8 +481,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>London</h4>
-                  <h5>England</h5>
+                  <div className="content_location_city">London</div>
+                  <div className="content_location_country">England</div>
                 </div>
               </Col>
               <Col
@@ -555,8 +491,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Paris</h4>
-                  <h5>France</h5>
+                  <div className="content_location_city">Paris</div>
+                  <div className="content_location_country">France</div>
                 </div>
               </Col>
               <Col
@@ -565,20 +501,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Florece</h4>
-                  <h5>Italy</h5>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col
-                lg={{ span: 4, offset: 0 }}
-                md={{ span: 4, offset: 0 }}
-                xs={{ span: 4, offset: 0 }}
-              >
-                <div className="content_location">
-                  <h4>Phoenix</h4>
-                  <h5>Arizona</h5>
+                  <div className="content_location_city">Florece</div>
+                  <div className="content_location_country">Italy</div>
                 </div>
               </Col>
               <Col
@@ -587,8 +511,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>San Francisco</h4>
-                  <h5>California</h5>
+                  <div className="content_location_city">Phoenix</div>
+                  <div className="content_location_country">Arizona</div>
                 </div>
               </Col>
               <Col
@@ -597,8 +521,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Keswick</h4>
-                  <h5>England</h5>
+                  <div className="content_location_city">San Francisco</div>
+                  <div className="content_location_country">California</div>
                 </div>
               </Col>
               <Col
@@ -607,8 +531,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>York</h4>
-                  <h5>England</h5>
+                  <div className="content_location_city">Keswick</div>
+                  <div className="content_location_country">England</div>
                 </div>
               </Col>
               <Col
@@ -617,8 +541,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Dublin</h4>
-                  <h5>Ireland</h5>
+                  <div className="content_location_city">York</div>
+                  <div className="content_location_country">England</div>
                 </div>
               </Col>
               <Col
@@ -627,20 +551,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Grande Isle</h4>
-                  <h5>Lousiana</h5>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col
-                lg={{ span: 4, offset: 0 }}
-                md={{ span: 4, offset: 0 }}
-                xs={{ span: 4, offset: 0 }}
-              >
-                <div className="content_location">
-                  <h4>Berlin</h4>
-                  <h5>Germany</h5>
+                  <div className="content_location_city">Dublin</div>
+                  <div className="content_location_country">Ireland</div>
                 </div>
               </Col>
               <Col
@@ -649,8 +561,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Athens</h4>
-                  <h5>Greece</h5>
+                  <div className="content_location_city">Grande Isle</div>
+                  <div className="content_location_country">Lousiana</div>
                 </div>
               </Col>
               <Col
@@ -659,8 +571,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Istambul</h4>
-                  <h5>Turkey</h5>
+                  <div className="content_location_city">Berlin</div>
+                  <div className="content_location_country">Germany</div>
                 </div>
               </Col>
               <Col
@@ -669,8 +581,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Milan</h4>
-                  <h5>italy</h5>
+                  <div className="content_location_city">Athens</div>
+                  <div className="content_location_country">Greece</div>
                 </div>
               </Col>
               <Col
@@ -679,8 +591,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Rome</h4>
-                  <h5>Italy</h5>
+                  <div className="content_location_city">Istambul</div>
+                  <div className="content_location_country">Turkey</div>
                 </div>
               </Col>
               <Col
@@ -689,22 +601,42 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Marid</h4>
-                  <h5>Spain</h5>
+                  <div className="content_location_city">Milan</div>
+                  <div className="content_location_country">italy</div>
+                </div>
+              </Col>
+              <Col
+                lg={{ span: 4, offset: 0 }}
+                md={{ span: 4, offset: 0 }}
+                xs={{ span: 4, offset: 0 }}
+              >
+                <div className="content_location">
+                  <div className="content_location_city">Rome</div>
+                  <div className="content_location_country">Italy</div>
+                </div>
+              </Col>
+              <Col
+                lg={{ span: 4, offset: 0 }}
+                md={{ span: 4, offset: 0 }}
+                xs={{ span: 4, offset: 0 }}
+              >
+                <div className="content_location">
+                  <div className="content_location_city">Marid</div>
+                  <div className="content_location_country">Spain</div>
                 </div>
               </Col>
             </Row>
           </TabPane>
           <TabPane tab="Mountain cabins" key="3">
-            <Row>
+            <Row gutter={[0, 10]}>
               <Col
                 lg={{ span: 4, offset: 0 }}
                 md={{ span: 4, offset: 0 }}
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Berlin</h4>
-                  <h5>Germany</h5>
+                  <div className="content_location_city">Berlin</div>
+                  <div className="content_location_country">Germany</div>
                 </div>
               </Col>
               <Col
@@ -713,8 +645,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Athens</h4>
-                  <h5>Greece</h5>
+                  <div className="content_location_city">Athens</div>
+                  <div className="content_location_country">Greece</div>
                 </div>
               </Col>
               <Col
@@ -723,8 +655,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Istambul</h4>
-                  <h5>Turkey</h5>
+                  <div className="content_location_city">Istambul</div>
+                  <div className="content_location_country">Turkey</div>
                 </div>
               </Col>
               <Col
@@ -733,8 +665,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Milan</h4>
-                  <h5>italy</h5>
+                  <div className="content_location_city">Milan</div>
+                  <div className="content_location_country">italy</div>
                 </div>
               </Col>
               <Col
@@ -743,8 +675,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Rome</h4>
-                  <h5>Italy</h5>
+                  <div className="content_location_city">Rome</div>
+                  <div className="content_location_country">Italy</div>
                 </div>
               </Col>
               <Col
@@ -753,20 +685,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Marid</h4>
-                  <h5>Spain</h5>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col
-                lg={{ span: 4, offset: 0 }}
-                md={{ span: 4, offset: 0 }}
-                xs={{ span: 4, offset: 0 }}
-              >
-                <div className="content_location">
-                  <h4>Duluth</h4>
-                  <h5>Minnesota</h5>
+                  <div className="content_location_city">Marid</div>
+                  <div className="content_location_country">Spain</div>
                 </div>
               </Col>
               <Col
@@ -775,8 +695,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Hot Springs</h4>
-                  <h5>Arkansas</h5>
+                  <div className="content_location_city">Duluth</div>
+                  <div className="content_location_country">Minnesota</div>
                 </div>
               </Col>
               <Col
@@ -785,8 +705,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Barcelona</h4>
-                  <h5>Catalonia</h5>
+                  <div className="content_location_city">Hot Springs</div>
+                  <div className="content_location_country">Arkansas</div>
                 </div>
               </Col>
               <Col
@@ -795,8 +715,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>London</h4>
-                  <h5>England</h5>
+                  <div className="content_location_city">Barcelona</div>
+                  <div className="content_location_country">Catalonia</div>
                 </div>
               </Col>
               <Col
@@ -805,8 +725,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Paris</h4>
-                  <h5>France</h5>
+                  <div className="content_location_city">London</div>
+                  <div className="content_location_country">England</div>
                 </div>
               </Col>
               <Col
@@ -815,20 +735,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Florece</h4>
-                  <h5>Italy</h5>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col
-                lg={{ span: 4, offset: 0 }}
-                md={{ span: 4, offset: 0 }}
-                xs={{ span: 4, offset: 0 }}
-              >
-                <div className="content_location">
-                  <h4>Phoenix</h4>
-                  <h5>Arizona</h5>
+                  <div className="content_location_city">Paris</div>
+                  <div className="content_location_country">France</div>
                 </div>
               </Col>
               <Col
@@ -837,8 +745,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>San Francisco</h4>
-                  <h5>California</h5>
+                  <div className="content_location_city">Florece</div>
+                  <div className="content_location_country">Italy</div>
                 </div>
               </Col>
               <Col
@@ -847,8 +755,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Keswick</h4>
-                  <h5>England</h5>
+                  <div className="content_location_city">Phoenix</div>
+                  <div className="content_location_country">Arizona</div>
                 </div>
               </Col>
               <Col
@@ -857,8 +765,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>York</h4>
-                  <h5>England</h5>
+                  <div className="content_location_city">San Francisco</div>
+                  <div className="content_location_country">California</div>
                 </div>
               </Col>
               <Col
@@ -867,8 +775,8 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Dublin</h4>
-                  <h5>Ireland</h5>
+                  <div className="content_location_city">Keswick</div>
+                  <div className="content_location_country">England</div>
                 </div>
               </Col>
               <Col
@@ -877,8 +785,28 @@ const LandingPage = () => {
                 xs={{ span: 4, offset: 0 }}
               >
                 <div className="content_location">
-                  <h4>Grande Isle</h4>
-                  <h5>Lousiana</h5>
+                  <div className="content_location_city">York</div>
+                  <div className="content_location_country">England</div>
+                </div>
+              </Col>
+              <Col
+                lg={{ span: 4, offset: 0 }}
+                md={{ span: 4, offset: 0 }}
+                xs={{ span: 4, offset: 0 }}
+              >
+                <div className="content_location">
+                  <div className="content_location_city">Dublin</div>
+                  <div className="content_location_country">Ireland</div>
+                </div>
+              </Col>
+              <Col
+                lg={{ span: 4, offset: 0 }}
+                md={{ span: 4, offset: 0 }}
+                xs={{ span: 4, offset: 0 }}
+              >
+                <div className="content_location">
+                  <div className="content_location_city">Grande Isle</div>
+                  <div className="content_location_country">Lousiana</div>
                 </div>
               </Col>
             </Row>

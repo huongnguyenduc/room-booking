@@ -1,0 +1,285 @@
+.modalTitle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  .iconModalBack {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    background-color: var(--gray-7);
+    border-radius: 50%;
+    &:hover {
+      background-color: lightgray;
+      cursor: pointer;
+    }
+  }
+  .modalTitleContent {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+.tourTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: var(--font-large);
+  .payMethod {
+    display: flex;
+    align-items: center;
+    .payMethodItem {
+      width: 30px;
+      height: 25px;
+      margin-left: var(--margin-small);
+      background-size: 100% 100%;
+      cursor: pointer;
+    }
+  }
+}
+
+.tourItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  .tourItemInfo {
+    .tourItemTitle {
+      font-weight: bold;
+      font-size: var(--font-small);
+    }
+    .tourItemContent {
+      color: var(--gray-3);
+      font-weight: bold;
+      font-size: var(--font-small);
+    }
+  }
+  .tourItemAction {
+    font-weight: bold;
+    font-size: var(--font-small);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+.isWorkTrip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .isWorkTripTitle {
+    font-weight: bold;
+    font-size: var(--font-small);
+  }
+}
+
+.payFullTopActive {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-large);
+  border: solid 2px var(--gray-1);
+  border-radius: 15px 15px 0 0;
+  cursor: pointer;
+}
+.payFullTopDisabled {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-large);
+  border: solid 2px var(--gray-6);
+  border-bottom: none;
+  border-radius: 15px 15px 0 0;
+  cursor: pointer;
+}
+.payFullBottomActive {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-large);
+  border: solid 2px var(--gray-1);
+  border-radius: 0 0 15px 15px;
+  cursor: pointer;
+}
+.payFullBottomDisabled {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-large);
+  border: solid 2px var(--gray-6);
+  border-top: none;
+  border-radius: 0 0 15px 15px;
+  cursor: pointer;
+}
+.payFullContent {
+  .payFullTitle {
+    font-weight: bold;
+    font-size: var(--font-small);
+  }
+  .payFullDescription {
+    color: var(--gray-3);
+    font-weight: bold;
+    font-size: var(--font-small);
+  }
+}
+.payFullPrice {
+  display: flex;
+  font-weight: bold;
+  font-size: var(--font-small);
+}
+.payFullActiveRadio {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  border: solid 6px var(--gray-1);
+  border-radius: 50%;
+}
+
+.payFullDisabledRadio {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  border: solid 2px var(--gray-6);
+  border-radius: 50%;
+}
+.paySelect {
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-small);
+  border: solid 2px var(--gray-6);
+  border-radius: var(--border-radius-medium);
+  .paySelectTitle {
+    margin-left: 10px;
+    font-weight: bold;
+  }
+}
+.cardNumber {
+  margin-top: 8px;
+  padding: 5px;
+  border: solid 2px var(--gray-6);
+  border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+}
+.cardInfo {
+  display: flex;
+  margin-bottom: 10px;
+  .expiredDate {
+    padding: 5px;
+    border: solid 2px var(--gray-6);
+    border-top: none;
+    border-radius: 0 0 0 var(--border-radius-medium);
+  }
+  .cvv {
+    padding: 5px;
+    border: solid 2px var(--gray-6);
+    border-top: none;
+    border-left: none;
+    border-radius: 0 0 var(--border-radius-medium) 0;
+  }
+}
+.policyItem {
+  margin-bottom: var(--margin-medium);
+  .policyTitle {
+    font-weight: bold;
+    font-size: var(--font-medium);
+  }
+  .policyDescription {
+    color: var(--gray-3);
+    font-weight: bold;
+  }
+}
+
+.paymentAction {
+  display: flex;
+  align-items: center;
+  margin-top: var(--margin-medium);
+  .paymentButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px var(--padding-extra-large);
+    font-weight: bold;
+  }
+  .actionDescription {
+    margin-left: var(--margin-extra-large);
+    color: blue;
+    font-size: 14px;
+  }
+}
+
+.roomDetail {
+  padding: var(--padding-large);
+  border: solid 2px var(--gray-6);
+  border-radius: 15px;
+  .roomInfo {
+    display: flex;
+    .roomImage {
+      position: relative;
+      width: 180px;
+      height: 120px;
+      margin-right: var(--margin-large);
+      background-size: cover;
+      border-radius: var(--border-radius-medium);
+      .roomRate {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        padding: 4px 6px;
+        font-weight: bold;
+        background-color: @white;
+        border-radius: var(--border-radius-small);
+      }
+    }
+    .roomDescription {
+      .roomName {
+        margin-bottom: var(--margin-large);
+        font-weight: bold;
+      }
+      .roomLocation {
+        color: var(--gray-2);
+        font-weight: bold;
+        font-size: var(--font-medium);
+      }
+      .roomSpace {
+        margin-bottom: var(--margin-large);
+        color: var(--gray-3);
+        font-weight: bold;
+        font-size: 12px;
+      }
+      .roomRating {
+        display: flex;
+        .roomRatingCount {
+          margin-left: 5px;
+          color: black;
+          font-weight: 900;
+          font-size: 14px;
+        }
+        .roomReviewCount {
+          margin-right: 10px;
+          margin-left: var(--margin-small);
+          color: #918d8d;
+          font-weight: 500;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .priceDetailItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    .roomTotal {
+      font-weight: bold;
+    }
+  }
+}
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  margin: 20px 0 20px 0;
+  background-color: hsl(240, 2%, 80%);
+  border-radius: 0.5rem;
+
+  &:hover {
+    background-color: var(--gray-4);
+  }
+}

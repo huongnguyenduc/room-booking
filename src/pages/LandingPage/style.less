@@ -1,6 +1,7 @@
 .Container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   background-color: #fff;
 
   /* Sign in */
@@ -10,7 +11,8 @@
 
   /* Slide section */
   .herosection {
-    width: 100%;
+    position: relative;
+    width: 110%;
     height: 500px;
     background: #364d79;
     border-radius: 20px;
@@ -85,28 +87,33 @@
       border-radius: 20px;
     }
     .place {
-      height: 225px;
+      height: 240px;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
       border-radius: 20px;
     }
     .title-content-1 {
-      padding-top: 25rem;
+      padding-top: 420px;
       padding-left: 5%;
       color: white;
     }
     .title-content-2 {
-      padding-top: 9rem;
+      padding-top: 160px;
       padding-left: 5%;
       color: white;
+    }
+    .title-name {
+      font-size: var(--font-large);
     }
   }
 
   /* Explore section */
   .explore {
     width: 100%;
-    margin-left: 4%;
+    .title {
+      margin-bottom: 25px;
+    }
     .container_explore .item_container {
       display: flex;
       width: 250px;
@@ -114,9 +121,9 @@
       cursor: pointer;
       .image_explore {
         position: relative;
-        width: 60px;
-        height: 60px;
-        margin-right: 10px;
+        width: 70px;
+        height: 70px;
+        margin-right: 15px;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -146,11 +153,17 @@
       #explore8 {
         background-image: url('../../asset/explore8.jpg');
       }
-      .item_content > h5 {
-        font-weight: bolder;
-      }
-      .item_content > h4 {
-        font-weight: bolder;
+      .item_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .item_content_city {
+          font-weight: bold;
+          font-size: var(--font-medium);
+        }
+        .item_content_time {
+          font-weight: 500;
+        }
       }
     }
   }
@@ -159,7 +172,6 @@
   .tab_select {
     width: 100%;
     margin-top: 10px;
-    margin-left: 4%;
     color: black;
     .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
       color: black;
@@ -168,13 +180,17 @@
     .ant-tabs-tab:hover {
       color: black;
     }
+    .ant-tabs-tab-btn {
+      font-size: var(--font-medium);
+    }
     .content_location {
       margin-bottom: 25px;
       cursor: pointer;
-      > h4 {
+      .content_location_city {
         font-weight: bold;
+        font-size: var(--font-medium);
       }
-      > h5 {
+      .content_location_country {
         color: gray;
         font-weight: 600;
       }
