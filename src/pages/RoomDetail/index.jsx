@@ -40,6 +40,8 @@ import ProBackground from '@/assets/pro_background.jpg';
 import CardItem from './components/CardItem';
 import { GRAY_1 } from '@/constants/color';
 import PaymentModal from './components/PaymentModal';
+import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
+import { history } from 'umi';
 
 const RoomDetail = (props) => {
   const { Option } = Select;
@@ -97,96 +99,121 @@ const RoomDetail = (props) => {
         <Col lg={24} md={24} sm={24} xs={24}>
           <Row align="middle">
             <Col lg={1} md={1} sm={2} xs={2}>
-              <div className={styles.iconBack}>
-                <ArrowLeftOutlined style={{ fontSize: '16px', color: GRAY_1 }} />
-              </div>
+              <ScrollReveal reveal={{ origin: 'right', delay: 400 }}>
+                <div className={styles.iconBack} onClick={() => history.push('/search')}>
+                  <ArrowLeftOutlined style={{ fontSize: '16px', color: GRAY_1 }} />
+                </div>
+              </ScrollReveal>
             </Col>
 
             <Col span={19}>
-              <div className={styles.room}>
-                <div className={styles.name}>Tiny house hosted by George</div>
-                <Col span={20}>
-                  <div className={styles.desc}>
-                    <div className={styles.rate}>
-                      <StarFilled style={{ color: 'orangered' }} />
-                      <span className={styles.ratePoint}> 5.0</span>
-                      <span className={styles.numberReview}> (175 Reviews)</span>
+              <ScrollReveal reveal={{ origin: 'right', delay: 400 }}>
+                <div className={styles.room}>
+                  <div className={styles.name}>Tiny house hosted by George</div>
+                  <Col span={20}>
+                    <div className={styles.desc}>
+                      <div className={styles.rate}>
+                        <StarFilled style={{ color: 'orangered' }} />
+                        <span className={styles.ratePoint}> 5.0</span>
+                        <span className={styles.numberReview}> (175 Reviews)</span>
+                      </div>
+                      <div className={styles.location}>
+                        <EnvironmentFilled style={{ color: 'orangered' }} />
+                        <span className={styles.numberReview}>
+                          {' '}
+                          Ở đây không có gì ngoài cảnh đẹp
+                        </span>
+                      </div>
                     </div>
-                    <div className={styles.location}>
-                      <EnvironmentFilled style={{ color: 'orangered' }} />
-                      <span className={styles.numberReview}> Ở đây không có gì ngoài cảnh đẹp</span>
-                    </div>
-                  </div>
-                </Col>
-              </div>
+                  </Col>
+                </div>
+              </ScrollReveal>
             </Col>
             <Col lg={4} md={4} sm={3} xs={3}>
-              <div className={styles.action}>
-                <div className={styles.actionItem}>
-                  <ShareAltOutlined style={{ fontSize: '26px', color: GRAY_1 }} />
-                  <span className={styles.actionName}>Share</span>
+              <ScrollReveal reveal={{ origin: 'right', delay: 400 }}>
+                <div className={styles.action}>
+                  <div className={styles.actionItem}>
+                    <ShareAltOutlined style={{ fontSize: '26px', color: GRAY_1 }} />
+                    <span className={styles.actionName}>Share</span>
+                  </div>
+                  <div className={styles.actionItem}>
+                    <HeartOutlined style={{ fontSize: '26px', color: GRAY_1 }} />
+                    <span className={styles.actionName}>Heart</span>
+                  </div>
                 </div>
-                <div className={styles.actionItem}>
-                  <HeartOutlined style={{ fontSize: '26px', color: GRAY_1 }} />
-                  <span className={styles.actionName}>Heart</span>
-                </div>
-              </div>
+              </ScrollReveal>
             </Col>
           </Row>
         </Col>
       </Row>
       <Row gutter={{ xl: 24, md: 12, sm: 6, xs: 4 }}>
         <Col lg={8} md={8} sm={8} xs={24}>
-          <div className={styles.viewHotel} style={{ backgroundImage: `url(${Background2})` }} />
+          <ScrollReveal reveal={{ origin: 'top', delay: 500 }}>
+            <div className={styles.viewHotel} style={{ backgroundImage: `url(${Background2})` }} />
+          </ScrollReveal>
         </Col>
         <Col lg={8} md={8} sm={8} xs={24}>
-          <Row>
-            <div
-              className={styles.viewHotel}
-              style={{ backgroundImage: `url(${Background5})`, height: '282px' }}
-            />
-          </Row>
-          <Row>
-            <div
-              className={styles.viewHotel}
-              style={{ backgroundImage: `url(${Background5})`, height: '282px' }}
-            />
-          </Row>
+          <ScrollReveal reveal={{ origin: 'top', delay: 600 }}>
+            <Row>
+              <div
+                className={styles.viewHotel}
+                style={{ backgroundImage: `url(${Background5})`, height: '282px' }}
+              />
+            </Row>
+          </ScrollReveal>
+          <ScrollReveal reveal={{ origin: 'top', delay: 700 }}>
+            <Row>
+              <div
+                className={styles.viewHotel}
+                style={{ backgroundImage: `url(${Background5})`, height: '282px' }}
+              />
+            </Row>
+          </ScrollReveal>
         </Col>
         <Col lg={8} md={8} sm={8} xs={24}>
-          <div className={styles.viewHotel} style={{ backgroundImage: `url(${Background3})` }}>
-            {/* <div className={styles.photos}>Choose another photo</div> */}
-            <Button
-              className={styles.btnShowPhotos}
-              icon={<PictureOutlined style={{ fontSize: '25px' }} />}
-            >
-              Show all photos +12
-            </Button>
-          </div>
+          <ScrollReveal reveal={{ origin: 'top', delay: 800 }}>
+            <div className={styles.viewHotel} style={{ backgroundImage: `url(${Background3})` }}>
+              {/* <div className={styles.photos}>Choose another photo</div> */}
+              <Button
+                className={styles.btnShowPhotos}
+                icon={<PictureOutlined style={{ fontSize: '25px' }} />}
+              >
+                Show all photos +12
+              </Button>
+            </div>
+          </ScrollReveal>
         </Col>
       </Row>
       <Row style={{ marginTop: '20px' }}>
         <Col lg={16} md={16} sm={24} xs={24}>
           <Row>
             <Col span={19}>
-              <div className="room__title">Tiny house hosted by George</div>
-              <div className="room__info">2 guests · 1 bedroom · 1 bed · 1 bathroom</div>
+              <ScrollReveal reveal={{ origin: 'top', delay: 400 }}>
+                <div className="room__title">Tiny house hosted by George</div>
+                <div className="room__info">2 guests · 1 bedroom · 1 bed · 1 bathroom</div>
+              </ScrollReveal>
             </Col>
             <Col span={2}>
-              <div className={styles.roomInfo}>
-                <Avatar
-                  size={48}
-                  src={
-                    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80'
-                  }
-                />
-              </div>
+              <ScrollReveal reveal={{ origin: 'top', delay: 400 }}>
+                <div className={styles.roomInfo}>
+                  <Avatar
+                    size={48}
+                    src={
+                      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80'
+                    }
+                  />
+                </div>
+              </ScrollReveal>
             </Col>
           </Row>
 
           <Divider />
-          {features.map((feature) => {
-            return <RoomFeature featureProps={feature} key={feature.id} />;
+          {features.map((feature, index) => {
+            return (
+              <ScrollReveal key={`${index}-feature`} reveal={{ origin: 'top', delay: 400 }}>
+                <RoomFeature featureProps={feature} key={feature.id} />
+              </ScrollReveal>
+            );
           })}
           {/* <RoomFeature />
 					<RoomFeature />
@@ -196,87 +223,92 @@ const RoomDetail = (props) => {
         </Col>
 
         <Col lg={8} md={8} sm={24} xs={24}>
-          <div className={styles.orderBox}>
-            <Row>
-              <Col span={12}>
-                <span className={styles.price}>
-                  <span className={styles.priceDollar}>$94</span> / night
-                </span>
-              </Col>
-              <Col span={12}>
-                <div className={styles.roomRate}>
-                  <StarFilled style={{ color: 'orangered', fontSize: '22px' }} />
-                  <span className={styles.ratePoint}> 5.0</span>
-                  <span className={styles.reviewNumber}> (175 Reviews)</span>
-                </div>
-              </Col>
-            </Row>
-            <Row style={{ margin: '10px 0' }}>
-              <div className={styles.selectBox}>
-                <Row>
-                  <Col span={12} style={{ borderRight: '1px solid lightgray' }}>
-                    <div className={styles.selectTitle}>Check-in</div>
-                    <DatePicker
-                      placeholder="Add date"
-                      style={{ width: '100%', border: 'none', boxShadow: 'none' }}
-                    />
-                  </Col>
+          <ScrollReveal reveal={{ origin: 'top', delay: 400 }}>
+            <div className={styles.orderBox}>
+              <Row>
+                <Col span={12}>
+                  <span className={styles.price}>
+                    <span className={styles.priceDollar}>$94</span> / night
+                  </span>
+                </Col>
+                <Col span={12}>
+                  <div className={styles.roomRate}>
+                    <StarFilled style={{ color: 'orangered', fontSize: '22px' }} />
+                    <span className={styles.ratePoint}> 5.0</span>
+                    <span className={styles.reviewNumber}> (175 Reviews)</span>
+                  </div>
+                </Col>
+              </Row>
+              <Row style={{ margin: '10px 0' }}>
+                <div className={styles.selectBox}>
+                  <Row>
+                    <Col span={12} style={{ borderRight: '1px solid lightgray' }}>
+                      <div className={styles.selectTitle}>Check-in</div>
+                      <DatePicker
+                        placeholder="Add date"
+                        style={{ width: '100%', border: 'none', boxShadow: 'none' }}
+                      />
+                    </Col>
 
-                  <Col span={12}>
-                    <div className={styles.selectTitle}>Check-out</div>
-                    <DatePicker
-                      placeholder="Add date"
-                      style={{ width: '100%', border: 'none', boxShadow: 'none' }}
-                    />
-                  </Col>
-                  <Col span={24} style={{ borderTop: '1px solid lightgray' }}>
-                    <div className={styles.selectTitle}>Guest</div>
-                    <Select
-                      defaultValue="1"
-                      style={{
-                        width: '100%',
-                        borderRadius: '18px',
-                        fontWeight: 'bold',
-                        border: 'none',
-                        boxShadow: 'none',
-                      }}
-                    >
-                      <Option value="1">1 Guest</Option>
-                      <Option value="2">2 Guests</Option>
-                      <Option value="4">4 Guests</Option>
-                    </Select>
-                  </Col>
-                </Row>
-              </div>
-            </Row>
-            <Row>
-              <Col span={24}>
-                <PaymentModal
-                  isPaymentModalVisible={isPaymentModalVisible}
-                  handlePaymentCancel={handlePaymentCancel}
-                  handlePaymentOk={handlePaymentOk}
-                />
-                <Button
-                  type="primary"
-                  block
-                  className={styles.btnOrder}
-                  style={{ fontWeight: 'bold', margin: '2px 2px' }}
-                  onClick={showPaymentModal}
-                >
-                  Check availibility
-                </Button>
-              </Col>
-            </Row>
-          </div>
-          <div className={styles.report}>
-            <AuditOutlined style={{ fontSize: '22px', marginRight: '10px' }} /> Report this listing
-          </div>
+                    <Col span={12}>
+                      <div className={styles.selectTitle}>Check-out</div>
+                      <DatePicker
+                        placeholder="Add date"
+                        style={{ width: '100%', border: 'none', boxShadow: 'none' }}
+                      />
+                    </Col>
+                    <Col span={24} style={{ borderTop: '1px solid lightgray' }}>
+                      <div className={styles.selectTitle}>Guest</div>
+                      <Select
+                        bordered={false}
+                        defaultValue="1"
+                        style={{
+                          width: '100%',
+                          borderRadius: '18px',
+                          fontWeight: 'bold',
+                          border: 'none',
+                          boxShadow: 'none',
+                        }}
+                      >
+                        <Option value="1">1 Guest</Option>
+                        <Option value="2">2 Guests</Option>
+                        <Option value="4">4 Guests</Option>
+                      </Select>
+                    </Col>
+                  </Row>
+                </div>
+              </Row>
+              <Row>
+                <Col span={24}>
+                  <PaymentModal
+                    isPaymentModalVisible={isPaymentModalVisible}
+                    handlePaymentCancel={handlePaymentCancel}
+                    handlePaymentOk={handlePaymentOk}
+                  />
+                  <Button
+                    type="primary"
+                    block
+                    className={styles.btnOrder}
+                    style={{ fontWeight: 'bold', margin: '2px 2px' }}
+                    onClick={showPaymentModal}
+                  >
+                    Check availibility
+                  </Button>
+                </Col>
+              </Row>
+            </div>
+            <div className={styles.report}>
+              <AuditOutlined style={{ fontSize: '22px', marginRight: '10px' }} /> Report this
+              listing
+            </div>
+          </ScrollReveal>
         </Col>
       </Row>
       <Divider />
-
-      <div className={styles.placeRecommend}>More places to stay</div>
-      <div>
+      <ScrollReveal reveal={{ origin: 'right', delay: 400 }}>
+        <div className={styles.placeRecommend}>More places to stay</div>
+      </ScrollReveal>
+      <ScrollReveal reveal={{ origin: 'top', delay: 400 }}>
         <Carousel
           arrows
           prevArrow={<LeftOutlined />}
@@ -289,7 +321,7 @@ const RoomDetail = (props) => {
           <CardItem />
           <CardItem />
         </Carousel>
-      </div>
+      </ScrollReveal>
     </Content>
   );
 };

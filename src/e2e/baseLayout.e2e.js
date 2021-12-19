@@ -33,7 +33,7 @@ describe('Ant Design Pro E2E test', () => {
   const testPage = (path) => async () => {
     await page.goto(`${BASE_URL}${path}`);
     await page.waitForSelector('footer', {
-      timeout: 2000,
+      timeout: 0,
     });
     const haveFooter = await page.evaluate(
       () => document.getElementsByTagName('footer').length > 0,
@@ -50,7 +50,7 @@ describe('Ant Design Pro E2E test', () => {
     const params = '?navTheme=light&layout=topmenu';
     await page.goto(`${BASE_URL}${params}`);
     await page.waitForSelector('footer', {
-      timeout: 2000,
+      timeout: 0,
     });
 
     const haveFooter = await page.evaluate(

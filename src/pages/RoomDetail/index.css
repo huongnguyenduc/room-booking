@@ -142,7 +142,6 @@ body {
 .search_container {
   display: flex;
   flex-wrap: nowrap;
-  width: 70%;
   min-width: 700px;
   background-color: #fff;
   border-radius: 10px;
@@ -152,10 +151,6 @@ body {
   padding-left: 25px;
   color: black;
   border: #999;
-}
-.icon_search :hover {
-  background-color: #fff;
-  cursor: pointer;
 }
 .ant-select-selector {
   border: none;

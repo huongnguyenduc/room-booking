@@ -1,13 +1,6 @@
-const waitTime = (time = 100) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(true);
-    }, time);
-  });
-};
+
 
 async function getFakeCaptcha(req, res) {
-  await waitTime(2000);
   return res.json('captcha-xxx');
 }
 
@@ -118,7 +111,6 @@ export default {
   ],
   'POST /api/login/account': async (req, res) => {
     const { password, username, type } = req.body;
-    await waitTime(2000);
 
     if (password === 'ant.design' && username === 'admin') {
       res.send({

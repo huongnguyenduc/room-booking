@@ -1,6 +1,6 @@
 import { GRAY_1 } from '@/constants/color';
 import { ArrowLeftOutlined, CrownFilled, FileDoneOutlined, StarFilled } from '@ant-design/icons';
-import { Button, Col, Divider, Input, Modal, Row, Select, Switch } from 'antd';
+import { Button, Col, Divider, Input, Modal, notification, Row, Select, Switch } from 'antd';
 import React from 'react';
 import Background1 from '@/assets/background_1.jpg';
 import CreditCard from '@/assets/Payment/credit-card.png';
@@ -125,8 +125,6 @@ function PaymentModal({ isPaymentModalVisible, handlePaymentCancel, handlePaymen
                 width: '100%',
                 borderRadius: '18px',
                 fontWeight: 'bold',
-                border: 'none',
-                boxShadow: 'none',
               }}
             >
               <Option value="1">1 Guest</Option>
@@ -191,7 +189,17 @@ function PaymentModal({ isPaymentModalVisible, handlePaymentCancel, handlePaymen
           </div>
           <Divider />
           <div className={styles.paymentAction}>
-            <Button type="primary" className={styles.paymentButton}>
+            <Button
+              type="primary"
+              className={styles.paymentButton}
+              onClick={() => {
+                handlePaymentCancel();
+                notification.success({
+                  message: 'Room booked successfully!',
+                  placement: 'bottomLeft',
+                });
+              }}
+            >
               Confirm and Pay
             </Button>
             <div className={styles.actionDescription}>Safety Disclosures, Cancellation Policy</div>

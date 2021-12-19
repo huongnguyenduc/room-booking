@@ -83,6 +83,8 @@
     padding: var(--padding-large);
     border: var(--gray-7) solid 2px;
     border-radius: var(--border-radius-large);
+    cursor: pointer;
+    transition: transform 0.3s ease-out;
     .roomCardImage {
       display: flex;
       justify-content: flex-end;
@@ -114,6 +116,9 @@
       margin-top: var(--margin-medium);
       font-weight: bold;
     }
+  }
+  .roomCard:hover {
+    transform: translateY(-5px);
   }
   .categoryCard {
     display: flex;

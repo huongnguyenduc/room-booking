@@ -12,7 +12,7 @@
   /* Slide section */
   .herosection {
     position: relative;
-    width: 110%;
+    width: 100%;
     height: 500px;
     background: #364d79;
     border-radius: 20px;
@@ -26,23 +26,28 @@
       .slick-next,
       .slick-prev:hover,
       .slick-next:hover {
-        min-height: 40px;
-        color: currentColor;
-        font-size: 30px;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        padding: 30px;
+        // color: var(--gray-1);
+        font-size: 20px;
+        background-color: @white;
+        border-radius: 50%;
       }
 
       .slick-prev,
       .slick-prev:hover {
-        left: 20px;
+        left: 60px;
         z-index: 2;
-        color: white;
+        color: @white;
       }
 
       .slick-next,
       .slick-next:hover {
-        right: 20px;
+        right: 60px;
         z-index: 2;
-        color: white;
+        color: @white;
       }
       .contentStyle {
         position: relative;
@@ -111,6 +116,7 @@
   /* Explore section */
   .explore {
     width: 100%;
+    margin-bottom: 110px;
     .title {
       margin-bottom: 25px;
     }
@@ -167,11 +173,102 @@
       }
     }
   }
+  .host_section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 600px;
+    margin-bottom: 110px;
+    background-color: var(--secondary-color);
+    border-radius: 30px;
+    .host_curved_bottom {
+      position: absolute;
+      bottom: -50px;
+      left: 1px;
+      width: 100%;
+      height: 70px;
+      background: #fff;
+      border-top-left-radius: 80%;
+      border-top-right-radius: 80%;
+    }
+    .host_curved_top {
+      position: absolute;
+      top: -50px;
+      left: 1px;
+      width: 100%;
+      height: 70px;
+      background: #fff;
+      border-bottom-right-radius: 80%;
+      border-bottom-left-radius: 80%;
+    }
+    .host_noInfo {
+      position: absolute;
+      width: 100px;
+      height: 130px;
+      background-size: cover;
+      border-radius: 10px;
+    }
+    .host_info {
+      // position: absolute;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      width: 200px;
+      height: 260px;
+      background-position: center;
+      background-size: cover;
+      border-radius: 15px;
+      .host_info_content {
+        width: 88%;
+        margin-bottom: 6%;
+        padding: var(--padding-small) var(--padding-medium);
+        background-color: @white;
+        border-radius: var(--border-radius-medium);
+        .host_name {
+          font-weight: bold;
+          font-size: var(--font-large);
+        }
+        .host_age {
+          color: var(--gray-3);
+          font-weight: bold;
+          font-size: var(--font-medium);
+        }
+      }
+    }
+    .host_content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .host_title {
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-size: 36px;
+      }
+      .host_description {
+        width: 45%;
+        margin-bottom: 20px;
+        font-size: 20px;
+        text-align: center;
+      }
+      .host_button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px 30px;
+        font-weight: bold;
+        font-size: 16px;
+        border-radius: 10px;
+      }
+    }
+  }
 
   /* tab select */
   .tab_select {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 50px;
     color: black;
     .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
       color: black;
@@ -210,58 +307,9 @@
       }
     }
     .recommend {
-      margin-top: 450px;
       .placeCard {
         margin-top: 30px;
       }
     }
-  }
-}
-
-/* Modal */
-.ant-modal-content {
-  width: 350px;
-  border-radius: 20px !important;
-  .ant-modal-close {
-    border: black;
-  }
-  .ant-modal-header {
-    padding-bottom: 5px;
-    border-radius: 20px;
-    .SignIn_title > h2 {
-      margin-bottom: 5px;
-    }
-  }
-  .SignInContainer {
-    width: 300px;
-    height: 335px;
-    border-radius: 20px;
-    .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
-      align-items: center;
-      height: 50px;
-      border-radius: 7px 7px 0 0;
-    }
-    .ant-divider-inner-text {
-      font-weight: bold;
-      font-size: 10px;
-    }
-    .PlugginButton {
-      display: flex;
-      align-items: center;
-      height: 50px;
-      margin-bottom: 15px;
-      border: 2px solid lightgray;
-      border-radius: 7px;
-      cursor: pointer;
-      > h3 {
-        margin: 0;
-        margin-left: 20px;
-      }
-    }
-  }
-}
-@media only screen and (max-width: 800px) {
-  .ant-modal {
-    left: 100px !important;
   }
 }

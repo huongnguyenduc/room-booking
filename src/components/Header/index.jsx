@@ -9,6 +9,8 @@ import { ReactComponent as Logo } from '@/assets/icons/door-open-solid.svg';
 import { Button, Layout, Menu, Input, Modal, Select, Divider } from 'antd';
 import { FacebookFilled, GoogleOutlined } from '@ant-design/icons';
 import styles from './styles.less';
+import './styles.less';
+import { Link } from 'umi';
 const { Option } = Select;
 
 const { Header, Content, Footer } = Layout;
@@ -28,8 +30,12 @@ function HotelHeader() {
     <div className={styles.hotelHeader}>
       <div className={styles.hotelHeaderLeft}>
         <MenuOutlined className={styles.menu} />
-        <Icon component={Logo} className={styles.logo} />
-        <span className={styles.brand}>Roomsy</span>
+        <Link to="/">
+          <Icon component={Logo} className={styles.logo} style={{ color: 'var(--gray-1)' }} />
+          <span className={styles.brand} style={{ color: 'var(--gray-1)' }}>
+            Roomsy
+          </span>
+        </Link>
         <span className={styles.menuItem}>Place to stay</span>
         <span className={styles.menuItem}>Experiences</span>
         <span className={styles.menuItem}>Nearby</span>
@@ -55,10 +61,11 @@ function HotelHeader() {
         </Button>
         <Modal
           title={title}
-          style={{ top: 100, left: 400 }}
+          style={{ top: 80, left: (400 * 1920) / window.innerWidth }}
           visible={visible}
           onCancel={() => setVisible(false)}
           footer={[]}
+          className="loginModal"
         >
           <div className="SignInContainer">
             <Select
@@ -90,6 +97,9 @@ function HotelHeader() {
             <Button
               style={{ height: '50px', width: 300, borderRadius: '7px 7px 7px 7px' }}
               type="primary"
+              onClick={() => {
+                setVisible(false);
+              }}
             >
               Sign in
             </Button>
