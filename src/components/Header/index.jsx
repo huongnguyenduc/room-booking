@@ -42,7 +42,7 @@ function HotelHeader() {
       </div>
       <div className={styles.hotelHeaderRight}>
         <SearchOutlined className={styles.searchIcon} />
-        <Input placeholder="Become a host" className={styles.searchInput} bordered={false} />
+        <Input placeholder="Search something" className={styles.searchInput} bordered={false} />
         <Button
           size="large"
           icon={<GlobalOutlined className={styles.globalIcon} />}
