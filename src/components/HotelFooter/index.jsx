@@ -8,7 +8,10 @@ import Icon, {
   GoogleOutlined,
   InstagramFilled,
   TwitterSquareFilled,
+  UpOutlined,
 } from '@ant-design/icons';
+import './index.css';
+import { history } from 'umi';
 import { ReactComponent as Logo } from '@/assets/icons/door-open-solid.svg';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
@@ -16,6 +19,15 @@ const { Header, Content, Footer } = Layout;
 const { SubMenu } = Menu;
 
 function HotelFooter() {
+  function scrollUp() {
+    const scrollUp = document.getElementById('scroll-up');
+    if (this.scrollY >= 200) scrollUp.classList.add('show-scroll');
+    else scrollUp.classList.remove('show-scroll');
+    console.log(this.scrollY);
+  }
+  React.useEffect(() => {
+    window.addEventListener('scroll', scrollUp);
+  }, []);
   return (
     <footer className={styles.hotelFooter}>
       <ScrollReveal reveal={{ reset: true }}>
@@ -38,7 +50,9 @@ function HotelFooter() {
           </span>
           <span className={styles.logoBrand}>
             <Icon component={Logo} className={styles.logo} />
-            <span className={styles.brand}>Roomsy</span>
+            <span className={styles.brand} onClick={() => history.push('/')}>
+              Roomsy
+            </span>
           </span>
           <Button size="large" className={styles.hostButton}>
             Become a host
@@ -157,6 +171,9 @@ function HotelFooter() {
           </Col>
         </Row>
       </ScrollReveal>
+      <a href="#" className={styles.scrollUp} id="scroll-up">
+        <UpOutlined style={{ color: 'var(--gray-1)' }} />
+      </a>
     </footer>
   );
 }

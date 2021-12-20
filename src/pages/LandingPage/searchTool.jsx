@@ -21,11 +21,11 @@ const SearchTool = () => {
       </div>
       <div className="search_item">
         <h4>Check in</h4>
-        <DatePicker />
+        <DatePicker format="DD-MM-YYYY" />
       </div>
       <div className="search_item">
         <h4>Check out</h4>
-        <DatePicker />
+        <DatePicker format="DD-MM-YYYY" />
       </div>
       <div className="search_item" style={{ border: 'none' }}>
         <h4>Guests</h4>

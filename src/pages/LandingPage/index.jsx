@@ -2,15 +2,9 @@
 import { Carousel, Row, Col, Tabs, Button } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import './style.less';
+import Pet from '@/assets/portraint/pet.jpg';
+import PortraitHotel from '@/assets/portraint/4a.jpg';
 import SearchTool from './searchTool';
-import slide1 from '../../asset/image2.jpg';
-import slide2 from '../../asset/image4.jpg';
-import slide3 from '../../asset/image1.jpg';
-import slide4 from '../../asset/image3.jpg';
-import place1 from '../../asset/outdoor.jpg';
-import place2 from '../../asset/unique.jpg';
-import place3 from '../../asset/entire.jpg';
-import place4 from '../../asset/pest.jpg';
 import explore1 from '../../asset/explore1.jpg';
 import explore2 from '../../asset/explore2.jpg';
 import explore3 from '../../asset/explore3.jpg';
@@ -28,7 +22,12 @@ import Binz from '@/assets/host/binz.jpg';
 import GongYoo from '@/assets/host/gong_yoo.jpeg';
 import Lisa from '@/assets/host/lisa.jpg';
 import SonTung from '@/assets/host/son_tung.jpeg';
-
+import BackgroundPro17 from '@/assets/hotel/17.jpg';
+import BackgroundPro32 from '@/assets/hotel/32.jpg';
+import slide1 from '../../asset/image2.jpg';
+import slide2 from '../../asset/image4.jpg';
+import slide3 from '../../asset/image1.jpg';
+import slide4 from '../../asset/image3.jpg';
 
 const { TabPane } = Tabs;
 
@@ -71,7 +70,17 @@ const LandingPage = () => {
             <div className="contentStyle" id="image3" style={{ background: `url(${slide3})` }} />
             <div className="contentStyle" id="image4" style={{ background: `url(${slide4})` }} />
           </Carousel>
-
+          <div className="carousel_content">
+            <ScrollReveal reveal={{ origin: 'top' }}>
+              <div className="carousel_title">The Greatest Outdoors</div>
+            </ScrollReveal>
+            <ScrollReveal reveal={{ origin: 'top' }}>
+              <div className="carousel_description">Wishlists curated by Roomsy</div>
+            </ScrollReveal>
+            <ScrollReveal reveal={{ delay: 600 }}>
+              <div className="carousel_button">Get inspired</div>
+            </ScrollReveal>
+          </div>
           <SearchTool />
         </div>
       </ScrollReveal>
@@ -83,7 +92,14 @@ const LandingPage = () => {
             md={{ span: 15, offset: 4 }}
           >
             <ScrollReveal reveal={{ delay: 600 }}>
-              <div className="placeCard" style={{ background: `url(${place1})` }}>
+              <div
+                className="placeCard"
+                style={{
+                  background: `url(${PortraitHotel})`,
+                  backgroundPosition: 'center',
+                  backgroundSize: `cover`,
+                }}
+              >
                 <div className="title-content-1">
                   <div className="title-name" style={{ color: 'white', fontWeight: 'bold' }}>
                     Outdoor gateways
@@ -105,7 +121,11 @@ const LandingPage = () => {
                 <ScrollReveal reveal={{ delay: 700 }}>
                   <div
                     className="place"
-                    style={{ background: `url(${place2})`, backgroundSize: `cover` }}
+                    style={{
+                      background: `url(${BackgroundPro32})`,
+                      backgroundSize: `cover`,
+                      backgroundPosition: 'center',
+                    }}
                   >
                     <div className="title-content-2">
                       <div className="title-name" style={{ color: 'white', fontWeight: 'bold' }}>
@@ -123,7 +143,11 @@ const LandingPage = () => {
                 <ScrollReveal reveal={{ delay: 800 }}>
                   <div
                     className="place"
-                    style={{ background: `url(${place3})`, backgroundSize: `cover` }}
+                    style={{
+                      background: `url(${BackgroundPro17})`,
+                      backgroundSize: `cover`,
+                      backgroundPosition: 'center',
+                    }}
                   >
                     <div className="title-content-2">
                       <div className="title-name" style={{ color: 'white', fontWeight: 'bold' }}>
@@ -144,7 +168,11 @@ const LandingPage = () => {
             <ScrollReveal reveal={{ delay: 900 }}>
               <div
                 className="placeCard"
-                style={{ background: `url(${place4})`, backgroundSize: `cover` }}
+                style={{
+                  background: `url(${Pet})`,
+                  backgroundSize: `cover`,
+                  backgroundPosition: 'center',
+                }}
               >
                 <div className="title-content-1">
                   <div className="title-name" style={{ color: 'white', fontWeight: 'bold' }}>

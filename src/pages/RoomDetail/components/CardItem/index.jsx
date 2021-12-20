@@ -16,7 +16,7 @@ const CardItem = (props) => {
           <div className={styles.roomCardImage} style={{ backgroundImage: `url(${Background4})` }}>
             <div className={styles.roomRating}>4.9</div>
           </div>
-          <div className={styles.title}>Tia Hut</div>
+          <div className={styles.title}>Dreamscape Glamping</div>
           <div className={styles.description}>Entire carbin in Dyerville</div>
           <div className={styles.roomDescription}>Studio · 1 bed · 1 bath</div>
           <div className={styles.price}>$164/ night</div>
@@ -27,7 +27,7 @@ const CardItem = (props) => {
           <div className={styles.roomCardImage} style={{ backgroundImage: `url(${Background5})` }}>
             <div className={styles.roomRating}>4.9</div>
           </div>
-          <div className={styles.title}>Tia Hut</div>
+          <div className={styles.title}>Marlborough Paradise</div>
           <div className={styles.description}>Entire carbin in Dyerville</div>
           <div className={styles.roomDescription}>Studio · 1 bed · 1 bath</div>
           <div className={styles.price}>$164/ night</div>
@@ -35,10 +35,13 @@ const CardItem = (props) => {
       </Col>
       <Col lg={8} md={12} sm={12} xs={12}>
         <div className={styles.roomCard}>
-          <div className={styles.roomCardImage} style={{ backgroundImage: `url(${Background1})` }}>
+          <div
+            className={styles.roomCardImage}
+            style={{ backgroundImage: `url(${Background1})`, backgroundPosition: 'center' }}
+          >
             <div className={styles.roomRating}>4.9</div>
           </div>
-          <div className={styles.title}>Tia Hut</div>
+          <div className={styles.title}>Exclusive Romantic Retreat</div>
           <div className={styles.description}>Entire carbin in Dyerville</div>
           <div className={styles.roomDescription}>Studio · 1 bed · 1 bath</div>
           <div className={styles.price}>$164/ night</div>

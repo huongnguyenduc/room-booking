@@ -61,7 +61,7 @@ function HotelHeader() {
         </Button>
         <Modal
           title={title}
-          style={{ top: 80, left: (400 * 1920) / window.innerWidth }}
+          style={{ top: 80, left: (600 * 1920) / window.innerWidth }}
           visible={visible}
           onCancel={() => setVisible(false)}
           footer={[]}
@@ -95,13 +95,18 @@ function HotelHeader() {
               apply.
             </p>
             <Button
-              style={{ height: '50px', width: 300, borderRadius: '7px 7px 7px 7px' }}
+              style={{
+                height: '50px',
+                width: 300,
+                borderRadius: '7px 7px 7px 7px',
+                fontWeight: 'bold',
+              }}
               type="primary"
               onClick={() => {
                 setVisible(false);
               }}
             >
-              Sign in
+              Continue
             </Button>
             <Divider>OR</Divider>
             <div className="PlugginButton">

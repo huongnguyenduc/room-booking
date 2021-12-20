@@ -131,6 +131,7 @@
     background-size: cover;
     border: var(--gray-7) solid 2px;
     border-radius: var(--border-radius-large);
+    cursor: pointer;
     .categoryCardTitle {
       color: @white;
       font-weight: bold;
@@ -179,5 +180,52 @@
         font-weight: bold;
       }
     }
+  }
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    .paginationItem {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 40px;
+      margin-right: 24px;
+      color: var(--gray-3);
+      font-weight: bold;
+      font-size: var(--font-medium);
+      text-align: center;
+      cursor: pointer;
+      transition: 0.4s;
+      .paginationNum {
+        color: var(--primary-color);
+        text-align: center;
+      }
+      .paginationSelected {
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary-color);
+        border-radius: 1px;
+      }
+    }
+    .paginationItem:hover {
+      color: var(--tertiary-color);
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  margin: 20px 0 20px 0;
+  background-color: hsl(240, 2%, 80%);
+  border-radius: 0.5rem;
+
+  &:hover {
+    background-color: var(--gray-4);
   }
 }

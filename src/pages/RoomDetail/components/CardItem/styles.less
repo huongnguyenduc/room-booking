@@ -4,6 +4,8 @@
   padding: var(--padding-large);
   border: var(--gray-7) solid 2px;
   border-radius: var(--border-radius-large);
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
   .roomCardImage {
     display: flex;
     justify-content: flex-end;
@@ -20,6 +22,9 @@
       border-radius: var(--border-radius-small);
     }
   }
+}
+.roomCard:hover {
+  transform: translateY(-5px);
 }
 .title {
   font-weight: bold;

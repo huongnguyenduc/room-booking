@@ -2,12 +2,13 @@ import { GRAY_1 } from '@/constants/color';
 import { ArrowLeftOutlined, CrownFilled, FileDoneOutlined, StarFilled } from '@ant-design/icons';
 import { Button, Col, Divider, Input, Modal, notification, Row, Select, Switch } from 'antd';
 import React from 'react';
-import Background1 from '@/assets/background_1.jpg';
+import Background1 from '@/assets/hotel/22.jpg';
 import CreditCard from '@/assets/Payment/credit-card.png';
 import JCB from '@/assets/Payment/jcb.png';
 import Paypal from '@/assets/Payment/paypal.png';
 import Visa from '@/assets/Payment/visa.png';
 import styles from './styles.less';
+import MaskedInput from 'antd-mask-input';
 
 const { Option } = Select;
 
@@ -32,7 +33,7 @@ function PaymentModal({ isPaymentModalVisible, handlePaymentCancel, handlePaymen
       <Row>
         <Col span={11}>
           <div className={styles.modalTitle}>
-            <div className={styles.iconModalBack}>
+            <div className={styles.iconModalBack} onClick={handlePaymentCancel}>
               <ArrowLeftOutlined style={{ fontSize: '12px', color: GRAY_1 }} />
             </div>
             <div className={styles.modalTitleContent}>Confirm and Pay</div>
@@ -41,7 +42,7 @@ function PaymentModal({ isPaymentModalVisible, handlePaymentCancel, handlePaymen
           <div className={styles.tourItem}>
             <div className={styles.tourItemInfo}>
               <div className={styles.tourItemTitle}>Dates</div>
-              <div className={styles.tourItemContent}>Jun 7 - 10</div>
+              <div className={styles.tourItemContent}>Dec 24 - 25</div>
             </div>
             <div className={styles.tourItemAction}>
               <div className={styles.tourItemAction}>Edit</div>
@@ -133,12 +134,26 @@ function PaymentModal({ isPaymentModalVisible, handlePaymentCancel, handlePaymen
             </Select>
           </div>
           <div className={styles.cardNumber}>
-            <Input placeholder="Card number" bordered={false} style={{ fontWeight: 'bold' }} />
+            {/* <Input placeholder="Card number" bordered={false} style={{ fontWeight: 'bold' }} /> */}
+            <MaskedInput
+              mask="1111 1111 1111 1111"
+              name="card"
+              bordered={false}
+              placeholder="Card number"
+              style={{ fontWeight: 'bold' }}
+            />
           </div>
           <Row className={styles.cardInfo}>
             <Col span={12}>
               <div className={styles.expiredDate}>
-                <Input
+                {/* <Input
+                  placeholder="Expiration date"
+                  style={{ fontWeight: 'bold' }}
+                  bordered={false}
+                /> */}
+                <MaskedInput
+                  mask="11/1111"
+                  name="expiry"
                   placeholder="Expiration date"
                   style={{ fontWeight: 'bold' }}
                   bordered={false}
@@ -147,7 +162,14 @@ function PaymentModal({ isPaymentModalVisible, handlePaymentCancel, handlePaymen
             </Col>
             <Col span={12}>
               <div className={styles.cvv}>
-                <Input placeholder="CVV" style={{ fontWeight: 'bold' }} bordered={false} />
+                {/* <Input placeholder="CVV" style={{ fontWeight: 'bold' }} bordered={false} /> */}
+                <MaskedInput
+                  mask="111"
+                  name="ccv"
+                  placeholder="CVV"
+                  style={{ fontWeight: 'bold' }}
+                  bordered={false}
+                />
               </div>
             </Col>
           </Row>
@@ -172,9 +194,9 @@ function PaymentModal({ isPaymentModalVisible, handlePaymentCancel, handlePaymen
           <Divider />
           <div className={styles.tourTitle}>Cancellation policy</div>
           <div className={styles.policyItem}>
-            <div className={styles.policyTitle}>Free cancellation until 2:00 PM on Jun 6.</div>
+            <div className={styles.policyTitle}>Free cancellation until 2:00 PM on Dec 24.</div>
             <div className={styles.policyDescription}>
-              After that, cancel before 2:00 PM on Jun 7 and get a full refund, minus the first
+              After that, cancel before 2:00 PM on Dec 25 and get a full refund, minus the first
               night and service fee.
             </div>
           </div>

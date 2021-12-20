@@ -1,42 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './index.css';
 import './styles.less';
-import { Row, Col, Modal, Switch } from 'antd';
-import { Card } from 'antd';
+import { Row, Col } from 'antd';
 import { Divider } from 'antd';
 import { Avatar } from 'antd';
-import { Button, Radio, Tooltip, Carousel } from 'antd';
+import { Button, Carousel } from 'antd';
 import { Select } from 'antd';
 import {
   LeftOutlined,
   RightOutlined,
   StarFilled,
   EnvironmentFilled,
-  LeftCircleOutlined,
   ArrowLeftOutlined,
-  RightCircleFilled,
-  LeftCircleFilled,
-  RightCircleOutlined,
-  FileImageOutlined,
   ShareAltOutlined,
   HeartOutlined,
   PictureOutlined,
   AuditOutlined,
 } from '@ant-design/icons';
 import RoomFeature from './components/RoomFeature/index.jsx';
-import { SearchOutlined } from '@ant-design/icons';
 import styles from './styles.less';
 import { Content } from 'antd/lib/layout/layout';
 import { DatePicker, Space } from 'antd';
-// import Carousel from 'react-multi-carousel';
-// import 'react-multi-carousel/lib/styles.css';
-import Background1 from '@/assets/background_1.jpg';
-import Background2 from '@/assets/background_2.jpg';
-import Background3 from '@/assets/background_3.jpg';
-import Background4 from '@/assets/background_4.jpg';
-import Background5 from '@/assets/background_5.jpg';
-import ProBackground from '@/assets/pro_background.jpg';
+import BackgroundPro18 from '@/assets/hotel/18.jpg';
+import BackgroundPro22 from '@/assets/hotel/22.jpg';
+import BackgroundPro31 from '@/assets/hotel/31.jpg';
+import BackgroundPro33 from '@/assets/hotel/33.jpg';
 import CardItem from './components/CardItem';
 import { GRAY_1 } from '@/constants/color';
 import PaymentModal from './components/PaymentModal';
@@ -109,7 +97,7 @@ const RoomDetail = (props) => {
             <Col span={19}>
               <ScrollReveal reveal={{ origin: 'right', delay: 400 }}>
                 <div className={styles.room}>
-                  <div className={styles.name}>Tiny house hosted by George</div>
+                  <div className={styles.name}>Landscape Kazbegi</div>
                   <Col span={20}>
                     <div className={styles.desc}>
                       <div className={styles.rate}>
@@ -121,7 +109,7 @@ const RoomDetail = (props) => {
                         <EnvironmentFilled style={{ color: 'orangered' }} />
                         <span className={styles.numberReview}>
                           {' '}
-                          Ở đây không có gì ngoài cảnh đẹp
+                          Stepantsminda, Mtskheta-Mtianeti, Georgia
                         </span>
                       </div>
                     </div>
@@ -149,7 +137,14 @@ const RoomDetail = (props) => {
       <Row gutter={{ xl: 24, md: 12, sm: 6, xs: 4 }}>
         <Col lg={8} md={8} sm={8} xs={24}>
           <ScrollReveal reveal={{ origin: 'top', delay: 500 }}>
-            <div className={styles.viewHotel} style={{ backgroundImage: `url(${Background2})` }} />
+            <div
+              className={styles.viewHotel}
+              style={{
+                backgroundImage: `url(${BackgroundPro18})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+              }}
+            />
           </ScrollReveal>
         </Col>
         <Col lg={8} md={8} sm={8} xs={24}>
@@ -157,7 +152,12 @@ const RoomDetail = (props) => {
             <Row>
               <div
                 className={styles.viewHotel}
-                style={{ backgroundImage: `url(${Background5})`, height: '282px' }}
+                style={{
+                  backgroundImage: `url(${BackgroundPro22})`,
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  height: '282px',
+                }}
               />
             </Row>
           </ScrollReveal>
@@ -165,14 +165,26 @@ const RoomDetail = (props) => {
             <Row>
               <div
                 className={styles.viewHotel}
-                style={{ backgroundImage: `url(${Background5})`, height: '282px' }}
+                style={{
+                  backgroundImage: `url(${BackgroundPro31})`,
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  height: '282px',
+                }}
               />
             </Row>
           </ScrollReveal>
         </Col>
         <Col lg={8} md={8} sm={8} xs={24}>
           <ScrollReveal reveal={{ origin: 'top', delay: 800 }}>
-            <div className={styles.viewHotel} style={{ backgroundImage: `url(${Background3})` }}>
+            <div
+              className={styles.viewHotel}
+              style={{
+                backgroundImage: `url(${BackgroundPro33})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+              }}
+            >
               {/* <div className={styles.photos}>Choose another photo</div> */}
               <Button
                 className={styles.btnShowPhotos}
@@ -215,11 +227,6 @@ const RoomDetail = (props) => {
               </ScrollReveal>
             );
           })}
-          {/* <RoomFeature />
-					<RoomFeature />
-					<RoomFeature />
-					<RoomFeature />
-					<RoomFeature /> */}
         </Col>
 
         <Col lg={8} md={8} sm={24} xs={24}>
@@ -247,6 +254,7 @@ const RoomDetail = (props) => {
                       <DatePicker
                         placeholder="Add date"
                         style={{ width: '100%', border: 'none', boxShadow: 'none' }}
+                        format="DD-MM-YYYY"
                       />
                     </Col>
 
@@ -255,6 +263,7 @@ const RoomDetail = (props) => {
                       <DatePicker
                         placeholder="Add date"
                         style={{ width: '100%', border: 'none', boxShadow: 'none' }}
+                        format="DD-MM-YYYY"
                       />
                     </Col>
                     <Col span={24} style={{ borderTop: '1px solid lightgray' }}>
@@ -289,7 +298,7 @@ const RoomDetail = (props) => {
                     type="primary"
                     block
                     className={styles.btnOrder}
-                    style={{ fontWeight: 'bold', margin: '2px 2px' }}
+                    style={{ fontWeight: 'bold', marginLeft: '3px' }}
                     onClick={showPaymentModal}
                   >
                     Check availibility
