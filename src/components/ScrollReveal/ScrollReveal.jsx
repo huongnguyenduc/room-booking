@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-const scrollReveal = require('scrollreveal').default;
+import scrollReveal from 'scrollreveal';
 
 const ScrollReveal = ({ children, style, reveal }) => {
   const sectionRef = useRef(null);
