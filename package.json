@@ -121,7 +121,8 @@
   },
   "engines": {
     "node": "14.17.6",
-    "yarn": "1.22.11"
+    "yarn": "1.22.11",
+    "npm": "7.22.0"
   },
   "gitHooks": {
     "commit-msg": "fabric verify-commit"
