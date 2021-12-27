@@ -8,6 +8,18 @@ Roomsy - Vacation Retails, Cabins, Beach Houses, Unique Homes and Experiences
 ## Target users ##
 - Tourisms, Hosts who want to sharing their home / stay
 
+## Images ##
+
+![Landing Page](https://github.com/huongnguyenduc/room-booking/blob/master/images/LandingPage.png?raw=true)
+![Login Modal](https://github.com/huongnguyenduc/room-booking/blob/master/images/LoginModal.png?raw=true)
+![Search Page](https://github.com/huongnguyenduc/room-booking/blob/master/images/SearchPage.png?raw=true)
+![LRoom Detail](https://github.com/huongnguyenduc/room-booking/blob/master/images/RoomDetail.png?raw=true)
+![Booking Modal](https://github.com/huongnguyenduc/room-booking/blob/master/images/BookingModal.png?raw=true)
+
+## Video Demo ##
+
+[![Roomsy Demo](https://img.youtube.com/vi/nFhbM0nG0Mk/maxresdefault.jpg)](https://youtu.be/nFhbM0nG0Mk)
+
 ## Frontend Development team ##
 - Nguyễn Đức Hướng - 19521592 - duchuong007@gmail.com
 - Bùi Minh Huy - 19521597 - 19521597@gm.uit.edu.vn
