@@ -21,10 +21,6 @@ import RoomFeature from './components/RoomFeature/index.jsx';
 import styles from './styles.less';
 import { Content } from 'antd/lib/layout/layout';
 import { DatePicker, Space } from 'antd';
-import BackgroundPro18 from '@/assets/hotel/18.jpg';
-import BackgroundPro22 from '@/assets/hotel/22.jpg';
-import BackgroundPro31 from '@/assets/hotel/31.jpg';
-import BackgroundPro33 from '@/assets/hotel/33.jpg';
 import CardItem from './components/CardItem';
 import { GRAY_1 } from '@/constants/color';
 import PaymentModal from './components/PaymentModal';
@@ -140,7 +136,7 @@ const RoomDetail = (props) => {
             <div
               className={styles.viewHotel}
               style={{
-                backgroundImage: `url(${BackgroundPro18})`,
+                backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603233/assets/hotel/18_oale8h.jpg)`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
               }}
@@ -153,7 +149,7 @@ const RoomDetail = (props) => {
               <div
                 className={styles.viewHotel}
                 style={{
-                  backgroundImage: `url(${BackgroundPro22})`,
+                  backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603244/assets/hotel/22_qsepey.jpg)`,
                   backgroundPosition: 'center',
                   backgroundSize: 'cover',
                   height: '282px',
@@ -166,7 +162,7 @@ const RoomDetail = (props) => {
               <div
                 className={styles.viewHotel}
                 style={{
-                  backgroundImage: `url(${BackgroundPro31})`,
+                  backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603256/assets/hotel/31_xauggd.jpg)`,
                   backgroundPosition: 'center',
                   backgroundSize: 'cover',
                   height: '282px',
@@ -180,7 +176,7 @@ const RoomDetail = (props) => {
             <div
               className={styles.viewHotel}
               style={{
-                backgroundImage: `url(${BackgroundPro33})`,
+                backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603269/assets/hotel/33_ekrujw.jpg)`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
               }}

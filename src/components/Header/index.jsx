@@ -61,7 +61,7 @@ function HotelHeader() {
         </Button>
         <Modal
           title={title}
-          style={{ top: 80, left: (600 * 1920) / window.innerWidth }}
+          style={{ top: 80, left: '30vw' }}
           visible={visible}
           onCancel={() => setVisible(false)}
           footer={[]}

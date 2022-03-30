@@ -1,11 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './styles.less';
-import Background1 from '@/assets/background_1.jpg';
-import Background2 from '@/assets/background_2.jpg';
-import Background3 from '@/assets/background_3.jpg';
-import Background4 from '@/assets/background_4.jpg';
-import Background5 from '@/assets/background_5.jpg';
 import { Row, Col } from 'antd';
 
 const CardItem = (props) => {
@@ -13,7 +7,12 @@ const CardItem = (props) => {
     <Row gutter={[8, 0]}>
       <Col lg={8} md={12} sm={12} xs={12}>
         <div className={styles.roomCard}>
-          <div className={styles.roomCardImage} style={{ backgroundImage: `url(${Background4})` }}>
+          <div
+            className={styles.roomCardImage}
+            style={{
+              backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603270/assets/background_4_x4uwse.jpg)`,
+            }}
+          >
             <div className={styles.roomRating}>4.9</div>
           </div>
           <div className={styles.title}>Dreamscape Glamping</div>
@@ -24,7 +23,12 @@ const CardItem = (props) => {
       </Col>
       <Col lg={8} md={12} sm={12} xs={12}>
         <div className={styles.roomCard}>
-          <div className={styles.roomCardImage} style={{ backgroundImage: `url(${Background5})` }}>
+          <div
+            className={styles.roomCardImage}
+            style={{
+              backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603271/assets/background_5_ipotxu.jpg)`,
+            }}
+          >
             <div className={styles.roomRating}>4.9</div>
           </div>
           <div className={styles.title}>Marlborough Paradise</div>
@@ -37,7 +41,10 @@ const CardItem = (props) => {
         <div className={styles.roomCard}>
           <div
             className={styles.roomCardImage}
-            style={{ backgroundImage: `url(${Background1})`, backgroundPosition: 'center' }}
+            style={{
+              backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603270/assets/background_1_qztndl.jpg)`,
+              backgroundPosition: 'center',
+            }}
           >
             <div className={styles.roomRating}>4.9</div>
           </div>

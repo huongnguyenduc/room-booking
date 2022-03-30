@@ -2,32 +2,9 @@
 import { Carousel, Row, Col, Tabs, Button } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import './style.less';
-import Pet from '@/assets/portraint/pet.jpg';
-import PortraitHotel from '@/assets/portraint/4a.jpg';
 import SearchTool from './searchTool';
-import explore1 from '../../asset/explore1.jpg';
-import explore2 from '../../asset/explore2.jpg';
-import explore3 from '../../asset/explore3.jpg';
-import explore4 from '../../asset/explore4.jpg';
-import explore5 from '../../asset/explore5.jpg';
-import explore6 from '../../asset/explore6.jpg';
-import explore7 from '../../asset/explore7.jpg';
-import explore8 from '../../asset/explore8.jpg';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
-import TanKhang from '@/assets/host/tan_khang.jpg';
-import DuongKha from '@/assets/host/duong_kha.jpg';
-import MinhHuy from '@/assets/host/minh_huy.jpg';
-import DucHuong from '@/assets/host/my_image.jpg';
-import Binz from '@/assets/host/binz.jpg';
-import GongYoo from '@/assets/host/gong_yoo.jpeg';
-import Lisa from '@/assets/host/lisa.jpg';
-import SonTung from '@/assets/host/son_tung.jpeg';
-import BackgroundPro17 from '@/assets/hotel/17.jpg';
-import BackgroundPro32 from '@/assets/hotel/32.jpg';
-import slide1 from '../../asset/image2.jpg';
-import slide2 from '../../asset/image4.jpg';
-import slide3 from '../../asset/image1.jpg';
-import slide4 from '../../asset/image3.jpg';
+import { exploreData, slideData, recommendData } from './data';
 
 const { TabPane } = Tabs;
 
@@ -65,10 +42,14 @@ const LandingPage = () => {
               </div>
             }
           >
-            <div id="image1" className="contentStyle" style={{ background: `url(${slide1})` }} />
-            <div className="contentStyle" id="image2" style={{ background: `url(${slide2})` }} />
-            <div className="contentStyle" id="image3" style={{ background: `url(${slide3})` }} />
-            <div className="contentStyle" id="image4" style={{ background: `url(${slide4})` }} />
+            {slideData.map((item) => (
+              <div
+                key={item.id}
+                id={item.id}
+                className="contentStyle"
+                style={{ backgroundImage: `url(${item.image})` }}
+              />
+            ))}
           </Carousel>
           <div className="carousel_content">
             <ScrollReveal reveal={{ origin: 'top' }}>
@@ -95,16 +76,16 @@ const LandingPage = () => {
               <div
                 className="placeCard"
                 style={{
-                  background: `url(${PortraitHotel})`,
+                  background: `url(${recommendData[0].image})`,
                   backgroundPosition: 'center',
                   backgroundSize: `cover`,
                 }}
               >
                 <div className="title-content-1">
                   <div className="title-name" style={{ color: 'white', fontWeight: 'bold' }}>
-                    Outdoor gateways
+                    {recommendData[0].title}
                   </div>
-                  <span>131 stays</span>
+                  <span>{recommendData[0].count} stays</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -122,16 +103,16 @@ const LandingPage = () => {
                   <div
                     className="place"
                     style={{
-                      background: `url(${BackgroundPro32})`,
+                      background: `url(${recommendData[1].image})`,
                       backgroundSize: `cover`,
                       backgroundPosition: 'center',
                     }}
                   >
                     <div className="title-content-2">
                       <div className="title-name" style={{ color: 'white', fontWeight: 'bold' }}>
-                        Unique stays
+                        {recommendData[1].title}
                       </div>
-                      <span>131 stays</span>
+                      <span>{recommendData[1].count} stays</span>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -144,16 +125,16 @@ const LandingPage = () => {
                   <div
                     className="place"
                     style={{
-                      background: `url(${BackgroundPro17})`,
+                      background: `url(${recommendData[2].image})`,
                       backgroundSize: `cover`,
                       backgroundPosition: 'center',
                     }}
                   >
                     <div className="title-content-2">
                       <div className="title-name" style={{ color: 'white', fontWeight: 'bold' }}>
-                        Entire home
+                        {recommendData[2].title}
                       </div>
-                      <span>131 stays</span>
+                      <span>{recommendData[2].count} stays</span>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -169,16 +150,16 @@ const LandingPage = () => {
               <div
                 className="placeCard"
                 style={{
-                  background: `url(${Pet})`,
+                  background: `url(${recommendData[3].image})`,
                   backgroundSize: `cover`,
                   backgroundPosition: 'center',
                 }}
               >
                 <div className="title-content-1">
                   <div className="title-name" style={{ color: 'white', fontWeight: 'bold' }}>
-                    Pets allowed
+                    {recommendData[3].title}
                   </div>
-                  <span>131 stays</span>
+                  <span>{recommendData[3].count} stays</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -193,158 +174,30 @@ const LandingPage = () => {
         </ScrollReveal>
         <div className="container_explore">
           <Row gutter={[0, 15]}>
-            <Col
-              lg={{ span: 6, offset: 0 }}
-              md={{ span: 10, offset: 0 }}
-              xs={{ span: 10, offset: 0 }}
-            >
-              <ScrollReveal>
-                <div className="item_container">
-                  <div
-                    id="explore1"
-                    className="image_explore"
-                    style={{ background: `url(${explore1})`, backgroundSize: `cover` }}
-                  />
-                  <div className="item_content">
-                    <div className="item_content_city">San Francisco</div>
-                    <div className="item_content_time">3 Hour drive</div>
+            {exploreData.map((item) => (
+              <Col
+                lg={{ span: 6, offset: 0 }}
+                md={{ span: 10, offset: 0 }}
+                xs={{ span: 10, offset: 0 }}
+                key={item.city}
+              >
+                <ScrollReveal>
+                  <div className="item_container">
+                    <div
+                      className="image_explore"
+                      style={{ background: `url(${item.image})`, backgroundSize: `cover` }}
+                    />
+                    <div className="item_content">
+                      <div className="item_content_city">{item.city}</div>
+                      <div className="item_content_time">
+                        {item.time}
+                        {item.time > 1 ? ` hours ` : ` hour `}drive
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </ScrollReveal>
-            </Col>
-            <Col
-              lg={{ span: 5, offset: 1 }}
-              md={{ span: 10, offset: 0 }}
-              xs={{ span: 10, offset: 2 }}
-            >
-              <ScrollReveal>
-                <div className="item_container">
-                  <div
-                    id="explore2"
-                    className="image_explore"
-                    style={{ background: `url(${explore2})`, backgroundSize: `cover` }}
-                  />
-                  <div className="item_content">
-                    <div className="item_content_city">Los Angeles</div>
-                    <div className="item_content_time">1 Hour drive</div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </Col>
-            <Col
-              lg={{ span: 5, offset: 1 }}
-              md={{ span: 10, offset: 0 }}
-              xs={{ span: 10, offset: 0 }}
-            >
-              <ScrollReveal>
-                <div className="item_container">
-                  <div
-                    id="explore3"
-                    className="image_explore"
-                    style={{ background: `url(${explore3})`, backgroundSize: `cover` }}
-                  />
-                  <div className="item_content">
-                    <div className="item_content_city">Rome</div>
-                    <div className="item_content_time">2 Hour drive</div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </Col>
-            <Col
-              lg={{ span: 5, offset: 1 }}
-              md={{ span: 10, offset: 0 }}
-              xs={{ span: 10, offset: 2 }}
-            >
-              <ScrollReveal>
-                <div className="item_container">
-                  <div
-                    id="explore4"
-                    className="image_explore"
-                    style={{ background: `url(${explore4})`, backgroundSize: `cover` }}
-                  />
-                  <div className="item_content">
-                    <div className="item_content_city">Miami</div>
-                    <div className="item_content_time">5 Hour drive</div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </Col>
-            <Col
-              lg={{ span: 6, offset: 0 }}
-              md={{ span: 10, offset: 0 }}
-              xs={{ span: 10, offset: 0 }}
-            >
-              <ScrollReveal>
-                <div className="item_container">
-                  <div
-                    id="explore5"
-                    className="image_explore"
-                    style={{ background: `url(${explore5})`, backgroundSize: `cover` }}
-                  />
-                  <div className="item_content">
-                    <div className="item_content_city">New York City</div>
-                    <div className="item_content_time">3 Hour drive</div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </Col>
-            <Col
-              lg={{ span: 5, offset: 1 }}
-              md={{ span: 10, offset: 0 }}
-              xs={{ span: 10, offset: 2 }}
-            >
-              <ScrollReveal>
-                <div className="item_container">
-                  <div
-                    id="explore6"
-                    className="image_explore"
-                    style={{ background: `url(${explore6})`, backgroundSize: `cover` }}
-                  />
-                  <div className="item_content">
-                    <div className="item_content_city">Paris</div>
-                    <div className="item_content_time">1 Hour drive</div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </Col>
-            <Col
-              lg={{ span: 5, offset: 1 }}
-              md={{ span: 10, offset: 0 }}
-              xs={{ span: 10, offset: 0 }}
-            >
-              <ScrollReveal>
-                <div className="item_container">
-                  <div
-                    id="explore7"
-                    className="image_explore"
-                    style={{ background: `url(${explore7})`, backgroundSize: `cover` }}
-                  />
-                  <div className="item_content">
-                    <div className="item_content_city">Danang</div>
-                    <div className="item_content_time">2 Hour drive</div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </Col>
-            <Col
-              lg={{ span: 5, offset: 1 }}
-              md={{ span: 10, offset: 0 }}
-              xs={{ span: 10, offset: 2 }}
-            >
-              <ScrollReveal>
-                <div className="item_container">
-                  <div
-                    id="explore8"
-                    className="image_explore"
-                    style={{ background: `url(${explore8})`, backgroundSize: `cover` }}
-                  />
-                  <div className="item_content">
-                    <div className="item_content_city">Singapore</div>
-                    <div className="item_content_time">5 Hour drive</div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </Col>
+                </ScrollReveal>
+              </Col>
+            ))}
           </Row>
         </div>
       </div>
@@ -369,7 +222,9 @@ const LandingPage = () => {
         <ScrollReveal style={{ position: 'absolute', bottom: '50%', left: '4%' }}>
           <div
             className="host_noInfo"
-            style={{ backgroundImage: `url(${Binz})` }}
+            style={{
+              backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603020/assets/host/binz_msqs4w.jpg)`,
+            }}
             reveal={{ origin: 'top' }}
           />
         </ScrollReveal>
@@ -377,22 +232,42 @@ const LandingPage = () => {
           style={{ position: 'absolute', top: '35%', left: '27%' }}
           reveal={{ origin: 'top' }}
         >
-          <div className="host_noInfo" style={{ backgroundImage: `url(${Lisa})` }} />
+          <div
+            className="host_noInfo"
+            style={{
+              backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603033/assets/host/lisa_eeesha.jpg)`,
+            }}
+          />
         </ScrollReveal>
         <ScrollReveal
           style={{ position: 'absolute', top: '35%', right: '34%' }}
           reveal={{ origin: 'top' }}
         >
-          <div className="host_noInfo" style={{ backgroundImage: `url(${GongYoo})` }} />
+          <div
+            className="host_noInfo"
+            style={{
+              backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603028/assets/host/gong_yoo_rqwpqf.jpg)`,
+            }}
+          />
         </ScrollReveal>
         <ScrollReveal
           reveal={{ origin: 'top' }}
           style={{ position: 'absolute', position: 'absolute', bottom: '50%', right: '11%' }}
         >
-          <div className="host_noInfo" style={{ backgroundImage: `url(${SonTung})` }} />
+          <div
+            className="host_noInfo"
+            style={{
+              backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603049/assets/host/son_tung_okv5fp.jpg)`,
+            }}
+          />
         </ScrollReveal>
         <ScrollReveal style={{ position: 'absolute', top: '-7%', right: '9%' }}>
-          <div className="host_info" style={{ backgroundImage: `url(${DucHuong})` }}>
+          <div
+            className="host_info"
+            style={{
+              backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603044/assets/host/my_image_cjne7m.jpg)`,
+            }}
+          >
             <div className="host_info_content">
               <div className="host_name">Duc Huong</div>
               <div className="host_age">20 old</div>
@@ -400,7 +275,12 @@ const LandingPage = () => {
           </div>
         </ScrollReveal>
         <ScrollReveal style={{ position: 'absolute', bottom: '-10%', right: '16%' }}>
-          <div className="host_info" style={{ backgroundImage: `url(${TanKhang})` }}>
+          <div
+            className="host_info"
+            style={{
+              backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603053/assets/host/tan_khang_sdj0cn.jpg)`,
+            }}
+          >
             <div className="host_info_content">
               <div className="host_name">Tan Khang</div>
               <div className="host_age">20 old</div>
@@ -408,7 +288,12 @@ const LandingPage = () => {
           </div>
         </ScrollReveal>
         <ScrollReveal style={{ position: 'absolute', top: '-7%', left: '12%' }}>
-          <div className="host_info" style={{ backgroundImage: `url(${MinhHuy})` }}>
+          <div
+            className="host_info"
+            style={{
+              backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603038/assets/host/minh_huy_jz6k5o.jpg)`,
+            }}
+          >
             <div className="host_info_content">
               <div className="host_name">Minh Huy</div>
               <div className="host_age">20 old</div>
@@ -416,7 +301,12 @@ const LandingPage = () => {
           </div>
         </ScrollReveal>
         <ScrollReveal style={{ position: 'absolute', bottom: '-10%', left: '15%' }}>
-          <div className="host_info" style={{ backgroundImage: `url(${DuongKha})` }}>
+          <div
+            className="host_info"
+            style={{
+              backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603026/assets/host/duong_kha_ls6va0.jpg)`,
+            }}
+          >
             <div className="host_info_content">
               <div className="host_name">Duong Kha</div>
               <div className="host_age">20 old</div>

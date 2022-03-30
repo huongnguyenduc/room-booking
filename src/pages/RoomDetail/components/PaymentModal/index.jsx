@@ -1,12 +1,7 @@
 import { GRAY_1 } from '@/constants/color';
-import { ArrowLeftOutlined, CrownFilled, FileDoneOutlined, StarFilled } from '@ant-design/icons';
+import { ArrowLeftOutlined, CrownFilled, StarFilled } from '@ant-design/icons';
 import { Button, Col, Divider, Input, Modal, notification, Row, Select, Switch } from 'antd';
 import React from 'react';
-import Background1 from '@/assets/hotel/22.jpg';
-import CreditCard from '@/assets/Payment/credit-card.png';
-import JCB from '@/assets/Payment/jcb.png';
-import Paypal from '@/assets/Payment/paypal.png';
-import Visa from '@/assets/Payment/visa.png';
 import styles from './styles.less';
 import MaskedInput from 'antd-mask-input';
 
@@ -107,12 +102,29 @@ function PaymentModal({ isPaymentModalVisible, handlePaymentCancel, handlePaymen
           <div className={styles.tourTitle}>
             Pay with
             <div className={styles.payMethod}>
-              <div className={styles.payMethodItem} style={{ backgroundImage: `url(${Paypal})` }} />
-              <div className={styles.payMethodItem} style={{ backgroundImage: `url(${JCB})` }} />
-              <div className={styles.payMethodItem} style={{ backgroundImage: `url(${Visa})` }} />
               <div
                 className={styles.payMethodItem}
-                style={{ backgroundImage: `url(${CreditCard})` }}
+                style={{
+                  backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603178/assets/Payment/paypal_yjjvdr.png)`,
+                }}
+              />
+              <div
+                className={styles.payMethodItem}
+                style={{
+                  backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603177/assets/Payment/jcb_fprjso.png)`,
+                }}
+              />
+              <div
+                className={styles.payMethodItem}
+                style={{
+                  backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603178/assets/Payment/visa_odj1h0.png)`,
+                }}
+              />
+              <div
+                className={styles.payMethodItem}
+                style={{
+                  backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603177/assets/Payment/credit-card_go2ex2.png)`,
+                }}
               />
             </div>
           </div>
@@ -230,7 +242,12 @@ function PaymentModal({ isPaymentModalVisible, handlePaymentCancel, handlePaymen
         <Col span={12} offset={1}>
           <div className={styles.roomDetail}>
             <div className={styles.roomInfo}>
-              <div className={styles.roomImage} style={{ backgroundImage: `url(${Background1})` }}>
+              <div
+                className={styles.roomImage}
+                style={{
+                  backgroundImage: `url(https://res.cloudinary.com/huong/image/upload/v1648603244/assets/hotel/22_qsepey.jpg)`,
+                }}
+              >
                 <div className={styles.roomRate}>4.9</div>
               </div>
               <div className={styles.roomDescription}>
